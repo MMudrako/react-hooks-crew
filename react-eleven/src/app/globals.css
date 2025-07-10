@@ -1,26 +1,83 @@
 @import "tailwindcss";
 
+@layer theme, base, components, utilities;
+
+@layer base {
+
+  body {
+    font-family: var(--font-sans);
+  }
+
+
+  h1.script {
+    font-family: var(--font-banner);
+    font-weight: bold;
+    
+
+  }
+}
+
+@layer utilities {
+  .font-banner {
+    font-family: var(--font-league-script);
+  }
+}
+
+/* === 1. Color + Font Variables (Light mode) === */
 :root {
   --background: #ffffff;
+  --backgroundDark: #301310;
   --foreground: #171717;
+
+  --primary: #00ff99;
+  --brand: #37ee17;
+  --accentNeonBlue: #2CE8F5;
+  --accentNeonYellow: #ffe100;
+  --alert: #FF395E;
+  --brainstorm: #9A6AFF;
+
+  /* Fonts loaded via layout.js */
+  --font-sans: var(--font-inter);
+  --font-banner: var(--font-league-script);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
+/* === 2. Dark mode overrides === */
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --surface: #1E2128;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* === 3. Tailwind IntelliSense Token Aliases (Optional) === */
+@theme {
+  --color-background: var(--background);
+  --color-backgroundDark: var(--backgroundDark);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-brand: var(--brand);
+  --color-accentBlue: var(--accentNeonBlue);
+  --color-accentYellow: var(--accentNeonYellow);
+  --color-alert: var(--alert);
+  --color-brainstorm: var(--brainstorm);
+
+  --font-sans: var(--font-sans);
+  --font-banner: var(--font-banner);
 }
+
+/* === 4. Global Body Styling === */
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-inter);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+/* body::before {
+  content: "✅ globals.css loaded";
+  position: fixed;
+  top: 0;
+  left: 0;
+  font-size: 12px;
+  color: red;
+} */

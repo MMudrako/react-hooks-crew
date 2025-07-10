@@ -33,6 +33,10 @@ React’s Eleven is more than a tutorial — it’s a themed learning experience
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Framer Motion](https://www.framer.com/motion/) for animation
 
+## 🖼️ Other Sources 
+Agent illustrations sourced from Lummi under their free-use license.
+[Lummi](https://www.lummi.ai/illustration)
+
 ---
 
 ## 📂 Folder Structure (Preview)
@@ -81,6 +85,7 @@ React’s Eleven is more than a tutorial — it’s a themed learning experience
 - [ ] Routing & Rendering (Phase 2)
 - [ ] UI & Interactivity (Phase 3)
 - [ ] Case Study & Deployment (Phase 4)
+- [ ] Authentication & Gamification (Pahse 5 - future release)
 
 ---
 
@@ -105,6 +110,7 @@ _TBD: To be added once the first component is live_
 **Maria Mudrakova**  
 [LinkedIn](https://www.linkedin.com/in/mudrakovamaria) 
 Built as a portfolio project to master React Hooks and creative UI/UX development.
+
 
 ---
 
