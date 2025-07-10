@@ -8,7 +8,7 @@ export default function AboutPage() {
             </h1>
 
             <p>
-                <strong>React's Eleven</strong> was born from a simple goal: to truly understand React by building something both technical and fun. Instead of grinding through tutorials, I flipped the formula: learn by teaching into embrace by storytelling.
+                <strong>React&rsquo;s Eleven</strong> was born from a simple goal: to truly understand React by building something both technical and fun. Instead of grinding through tutorials, I flipped the formula: learn by teaching into embrace by storytelling.
             </p>
 
             <p className="mt-4">
@@ -20,7 +20,7 @@ export default function AboutPage() {
             </p>
 
             <p className="mt-4 italic text-accentNeonBlue">
-                It's part tutorial, part story, and 100% hands-on learning.
+                It&rsquo;s part tutorial, part story, and 100% hands-on learning.
             </p>
 
             <p className="mt-8">
