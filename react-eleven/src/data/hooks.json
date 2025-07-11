@@ -64,10 +64,10 @@
     },
     {
         "id": "useLayoutEffect",
-        "name": "The Enforcer",
+        "name": "The Stylist",
         "hook": "useLayoutEffect",
         "role": "Executes visual fixes before anyone notices.",
-        "icon": "🦾",
+        "icon": "💄",
         "color": "purple",
         "featured": false
     },
@@ -75,7 +75,7 @@
         "id": "useImperativeHandle",
         "name": "The Croupier",
         "hook": "useImperativeHandle",
-        "role": “I don’t just deal the cards — I decide which ones you think you got.”,
+        "role": "I do not just deal the cards — I decide which ones you think you got.",
         "icon": "♣️",
         "color": "blue",
         "featured": false
