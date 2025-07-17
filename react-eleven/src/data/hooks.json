@@ -4,8 +4,13 @@
         "name": "The Keeper",
         "hook": "useState",
         "role": "Handles local UI state with precision and care.",
+        "traits": [
+            "Stores dynamic values",
+            "Triggers re-renders on change",
+            "Scoped to component"
+        ],
+        "usedFor": "Managing inputs, toggles, counters, or any local stateful logic.",
         "icon": "🗃️",
-        "color": "indigo",
         "featured": true
     },
     {
@@ -13,8 +18,13 @@
         "name": "The Tracker",
         "hook": "useEffect",
         "role": "Monitors changes and responds to them in real time.",
+        "traits": [
+            "Performs side effects",
+            "Runs after render",
+            "Watches dependencies"
+        ],
+        "usedFor": "Fetching data, syncing with external systems, or reacting to state changes.",
         "icon": "📡",
-        "color": "cyan",
         "featured": true
     },
     {
@@ -22,8 +32,13 @@
         "name": "The Memoizer",
         "hook": "useMemo",
         "role": "Remembers expensive calculations and only recomputes when necessary.",
+        "traits": [
+            "Caches computed values",
+            "Depends on dependency array",
+            "Improves render performance"
+        ],
+        "usedFor": "Avoiding recalculations in performance-heavy logic.",
         "icon": "🧠",
-        "color": "yellow",
         "featured": true
     },
     {
@@ -31,8 +46,13 @@
         "name": "The Mentor",
         "hook": "useCallback",
         "role": "Provides stable advice to junior agents, avoiding chaos on rerender.",
+        "traits": [
+            "Memoizes function references",
+            "Prevents re-creations on re-render",
+            "Useful with child components"
+        ],
+        "usedFor": "Passing stable callbacks to optimized components.",
         "icon": "🎯",
-        "color": "amber",
         "featured": true
     },
     {
@@ -40,8 +60,13 @@
         "name": "The Archivist",
         "hook": "useRef",
         "role": "Keeps quiet notes that survive every render, and handles animations in secret.",
+        "traits": [
+            "Stores mutable values",
+            "Persists across renders",
+            "Can reference DOM nodes"
+        ],
+        "usedFor": "Holding DOM elements or persistent values without triggering re-renders.",
         "icon": "📂",
-        "color": "gray",
         "featured": false
     },
     {
@@ -49,8 +74,13 @@
         "name": "The Architect",
         "hook": "useContext",
         "role": "Sets the mission mode and shares it with the whole team.",
+        "traits": [
+            "Accesses shared global state",
+            "Avoids prop drilling",
+            "Requires a Provider"
+        ],
+        "usedFor": "Sharing theme, auth, or app-wide data between components.",
         "icon": "🏛️",
-        "color": "emerald",
         "featured": true
     },
     {
@@ -58,8 +88,13 @@
         "name": "The Sorter",
         "hook": "useReducer",
         "role": "Handles complex onboarding logic with discipline and order.",
+        "traits": [
+            "Manages complex state with actions",
+            "Uses reducer pattern",
+            "Predictable state transitions"
+        ],
+        "usedFor": "Handling forms, state machines, or structured updates.",
         "icon": "🧮",
-        "color": "red",
         "featured": true
     },
     {
@@ -67,8 +102,13 @@
         "name": "The Stylist",
         "hook": "useLayoutEffect",
         "role": "Executes visual fixes before anyone notices.",
+        "traits": [
+            "Runs synchronously after render",
+            "Blocks paint until complete",
+            "Used for layout reads/writes"
+        ],
+        "usedFor": "Measuring layout or applying style fixes before screen paints.",
         "icon": "💄",
-        "color": "purple",
         "featured": false
     },
     {
@@ -76,8 +116,13 @@
         "name": "The Croupier",
         "hook": "useImperativeHandle",
         "role": "I do not just deal the cards — I decide which ones you think you got.",
+        "traits": [
+            "Customizes ref exposure",
+            "Works with forwardRef",
+            "Hides internal logic"
+        ],
+        "usedFor": "Exposing specific methods to parent components via refs.",
         "icon": "♣️",
-        "color": "blue",
         "featured": false
     },
     {
@@ -85,8 +130,13 @@
         "name": "The Registrar",
         "hook": "useId",
         "role": "Generates unique keys to prevent confusion.",
+        "traits": [
+            "Generates unique IDs",
+            "Consistent between server/client",
+            "Supports accessibility needs"
+        ],
+        "usedFor": "Assigning consistent IDs for form fields and ARIA attributes.",
         "icon": "👩‍💻",
-        "color": "pink",
         "featured": false
     },
     {
@@ -94,8 +144,13 @@
         "name": "The Dispatcher",
         "hook": "useTransition",
         "role": "Manages background work while the app stays responsive.",
+        "traits": [
+            "Schedules non-urgent updates",
+            "Returns pending state",
+            "Improves perceived performance"
+        ],
+        "usedFor": "Delaying expensive updates like filtering or list rendering.",
         "icon": "🛫",
-        "color": "lime",
         "featured": false
     }
 ]

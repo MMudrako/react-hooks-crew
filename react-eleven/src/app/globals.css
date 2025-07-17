@@ -21,6 +21,7 @@
   .font-banner {
     font-family: var(--font-league-script);
   }
+  
 }
 
 /* === 1. Color + Font Variables (Light mode) === */
@@ -39,6 +40,7 @@
   /* Fonts loaded via layout.js */
   --font-sans: var(--font-inter);
   --font-banner: var(--font-league-script);
+  --font-oxanium: var(--font-oxanium);
 }
 
 /* === 2. Dark mode overrides === */
@@ -64,6 +66,7 @@
 
   --font-sans: var(--font-sans);
   --font-banner: var(--font-banner);
+  --font-oxanium: var(--font-oxanium);
 }
 
 /* === 4. Global Body Styling === */
@@ -73,6 +76,33 @@ body {
   font-family: var(--font-inter);
   transition: background-color 0.3s ease, color 0.3s ease;
 }
+
+@keyframes stamp-slam {
+  0% {
+    transform: scale(5) rotate(0deg);
+    opacity: 0;
+  }
+  40% {
+    transform: scale(1) rotate(-8deg);
+    opacity: 1;
+  }
+  60% {
+    transform: scale(1.1) rotate(5deg);
+  }
+  80% {
+    transform: scale(0.95) rotate(-3deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+.stamp-animate {
+  animation: stamp-slam 2s ease-out forwards;
+}
+
+
+
 /* body::before {
   content: "✅ globals.css loaded";
   position: fixed;

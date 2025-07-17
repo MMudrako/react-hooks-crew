@@ -3,10 +3,11 @@ import Navbar from "@/components/Navbar";
 import "./globals.css";
 //import './test.css'
 
-import { Inter, League_Script, Uncial_Antiqua } from "next/font/google";
+import { Inter, League_Script, Oxanium } from "next/font/google";
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 const leagueScript = League_Script({ subsets: ['latin'], weight: '400', variable: '--font-league-script' });
+const oxanium = Oxanium({ subsets: ['latin'], variable: '--font-oxanium', weight: '400' });
 
 export const metadata = {
   title: "React's Eleven Hooks",
@@ -15,7 +16,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${inter.variable} ${leagueScript.variable}`}>
+    <html lang="en" className={`${inter.variable} ${leagueScript.variable} ${oxanium.variable}`}>
       <body >
         <Navbar />
         {children}
