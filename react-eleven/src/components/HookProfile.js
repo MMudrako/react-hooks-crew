@@ -1,9 +1,20 @@
 
 import Image from 'next/image';
 import { capitalize } from '@/lib/format';
-import { RocketLaunchIcon } from '@heroicons/react/20/solid'
+import TheKeeper from './hookDemos/TheKeeper';
+import TheTracker from './hookDemos/TheTracker';
+import hooksDetails from '@/data/hooksDetails';
+import TheArchivist from './hookDemos/TheArchivist';
+import TheArchitect from './hookDemos/TheArchitect';
 
 
+const demoMap = {
+    "useState": TheKeeper,
+    "useEffect": TheTracker,
+    "useRef": TheArchivist,
+    "useContext": TheArchitect
+
+}
 export default function HookProfile({ hook }) {
 
     for (const [key, value] of Object.entries(hook)) {
@@ -11,7 +22,9 @@ export default function HookProfile({ hook }) {
 
 
     }
+    const profile = hooksDetails.find(entry => entry.id === hook.id);
 
+    const DemoComponent = demoMap[hook.id] ?? null;
     return (
 
         <main className='main  ml-20'>
@@ -56,7 +69,7 @@ export default function HookProfile({ hook }) {
             <section className='mid-section'>
                 <div className=' flex justify-center divider bg-foreground' >
                     <h1 className=' text-amber-50 font-oxanium'>
-                        Character Features
+                        Traits Markers
                     </h1>
                 </div>
                 <div className='plot pt-2 pl-3 m-5'>
@@ -64,47 +77,36 @@ export default function HookProfile({ hook }) {
                         {hook.traits.map((trait, index) => (
                             <li key={index}
                                 className='flex-items-center gap-1 br-amber-200 px-2 py-1 rounded'>
-                                <RocketLaunchIcon className='size-6 text-foreground' />
-                                <span>{trait}</span>
+                                <span className='size-6 text-foreground'>{hook.icon}{trait}</span>
                             </li>
                         )
                         )}
 
                     </ol>
                 </div>
-
-            </section>
-            <section className='bottom-section'>
                 <div className=' flex justify-center divider bg-foreground' >
                     <h1 className=' text-amber-50 font-oxanium'>
                         Legend
                     </h1>
                 </div>
+                <p className="mt-2 text-base text-foreground">{profile?.legend}</p>
+
+            </section>
+            <section className='bottom-section'>
+                <div className=' flex justify-center divider bg-foreground' >
+
+                </div>
                 <div className='grid grid-cols-2 gap-0.5'>
                     <div className='mission border border-foreground'>
-                        <p className="mb-4">
+                        <h3>
                             Mission Briefing
-                            Lorem ipsum dolor sit amet consectetur adipiscing elit.
-                            Quisque faucibus ex sapien vitae pellentesque sem placerat.
-                            In id cursus mi pretium tellus duis convallis. Tempus leo eu
-                            aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus
-                            nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer
-                            nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu.
-                            Ad litora torquent per conubia nostra inceptos himenaeos.
-                        </p>
+
+                        </h3>
+
                     </div>
                     <div className='output border border-foreground  '>
-                        <p>
-                            Demo Output
-                            Lorem ipsum dolor sit amet consectetur adipiscing elit.
-                            Quisque faucibus ex sapien vitae pellentesque sem placerat.
-                            In id cursus mi pretium tellus duis convallis. Tempus leo eu
-                            aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus
-                            nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia
-                            integer nunc posuere. Ut hendrerit semper vel class aptent tacit
-                            sociosqu. Ad litora torquent per conubia nostra inceptos
-                            himenaeos.
-                        </p>
+                        <h3>Ops Panel tabs Strategy and Visual Evidence and will be here</h3>
+                        <DemoComponent />
                     </div>
 
                 </div>

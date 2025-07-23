@@ -1,5 +1,6 @@
 import HookCard from "@/components/HookCard"
-import hooks from "../../data/hooks.json"
+import hooks from "../../data/hooks.json";
+
 
 export default function CrewCardsPage() {
 
@@ -15,6 +16,7 @@ export default function CrewCardsPage() {
                     ))}
                 </div>
             </div>
+
         </div>
     )
 }

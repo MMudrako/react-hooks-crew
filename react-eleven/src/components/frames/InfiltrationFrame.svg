@@ -1,0 +1,36 @@
+<svg width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background camouflage pattern -->
+  <defs>
+    <pattern id="camo" patternUnits="userSpaceOnUse" width="60" height="60">
+      <rect width="60" height="60" fill="#4a773c"/> <!-- Base green -->
+
+      <!-- First leaf shape -->
+      <path d="M0 30 Q15 0 30 30 T60 30 Q45 60 30 30 T0 30 Z" fill="#2e5d2c" opacity="0.6"/>
+
+      <!-- Second overlapping curve -->
+      <path d="M30 0 Q45 30 30 60 Q15 30 30 0 Z" fill="#5e8b47" opacity="0.4"/>
+
+      <!-- Third layer (a blob shape like moss or shrub) -->
+      <ellipse cx="45" cy="15" rx="12" ry="6" fill="#6a9c4f" opacity="0.3"/>
+
+      <!-- Another one for shadowy texture -->
+      <path d="M10 50 C30 40 30 70 10 60 Z" fill="#2a4721" opacity="0.5"/>
+    </pattern>
+
+  </defs>
+
+  <!-- Outer frame -->
+  <rect x="0" y="0" width="300" height="300" fill="url(#camo)" />
+
+  <!-- Inner transparent cutout -->
+  <rect x="50" y="30" width="200" height="200" fill="white"/>
+
+  <!-- Optional border around inner cutout -->
+  <rect x="50" y="30" width="200" height="200" fill="none" stroke="#2e5d2c" stroke-width="4"/>
+
+  <!-- Decorative rivets (subtle) -->
+  <circle cx="25" cy="25" r="5" fill="#3c5d33"/>
+  <circle cx="275" cy="25" r="5" fill="#3c5d33"/>
+  <circle cx="25" cy="275" r="5" fill="#3c5d33"/>
+  <circle cx="275" cy="275" r="5" fill="#3c5d33"/>
+</svg>

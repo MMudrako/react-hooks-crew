@@ -1,5 +1,5 @@
-import CaseStudyPhase1 from "@/components/CaseStudyPhase1";
-import ScreenshotsGallery from "@/components/ScreenshotsGallery";
+import CaseStudyPhase1 from "@/components/projectCaseStudy/CaseStudyPhase1";
+import ScreenshotsGallery from "@/components/projectCaseStudy/ScreenshotsGallery";
 
 
 

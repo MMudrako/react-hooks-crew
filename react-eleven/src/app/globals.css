@@ -24,9 +24,26 @@
   
 }
 
+@layer components {
+  .bg-french-vanilla {
+    @apply bg-accentYellow;
+  }
+  .bg-chocolate-icecream {
+    @apply bg-backgroundDark;
+  }
+  .bg-whipped-cream {
+    @apply bg-beige;
+  }
+  .bg-honey-lime {
+    @apply bg-brand;
+  }
+}
+
+
 /* === 1. Color + Font Variables (Light mode) === */
 :root {
   --background: #ffffff;
+  --beige: #f0dca3;
   --backgroundDark: #301310;
   --foreground: #171717;
 
@@ -59,6 +76,7 @@
   --color-foreground: var(--foreground);
   --color-primary: var(--primary);
   --color-brand: var(--brand);
+  --color-beige: var(--beige);
   --color-accentBlue: var(--accentNeonBlue);
   --color-accentYellow: var(--accentNeonYellow);
   --color-alert: var(--alert);

@@ -24,7 +24,7 @@
             "Watches dependencies"
         ],
         "usedFor": "Fetching data, syncing with external systems, or reacting to state changes.",
-        "icon": "📡",
+        "icon": "👨‍💻",
         "featured": true
     },
     {
