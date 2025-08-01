@@ -1,0 +1,38 @@
+[
+    {
+        "id": "agent-001",
+        "name": "Linus Blaze",
+        "specialty": "Recon",
+        "status": "Untrained",
+        "assignedBy": "The Sorter",
+        "mode": "training",
+        "icon": "🕵️‍♂️"
+    },
+    {
+        "id": "agent-002",
+        "name": "Max Voltage",
+        "specialty": "Tech Infiltration",
+        "status": "Trained",
+        "assignedBy": "The Sorter",
+        "mode": "mission",
+        "icon": "💻"
+    },
+    {
+        "id": "agent-003",
+        "name": "Nova Skye",
+        "specialty": "Negotiation",
+        "status": "Training",
+        "assignedBy": "The Sorter",
+        "mode": "brainstorm",
+        "icon": "🧑‍🎤"
+    },
+    {
+        "id": "agent-004",
+        "name": "Jett Mirage",
+        "specialty": "Surveillance",
+        "status": "Untrained",
+        "assignedBy": "The Sorter",
+        "mode": "retreat",
+        "icon": "📸"
+    }
+]

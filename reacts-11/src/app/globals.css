@@ -1,0 +1,131 @@
+@import "tailwindcss";
+
+@layer theme, base, components, utilities;
+
+@layer base {
+
+  body {
+    font-family: var(--font-sans);
+  }
+
+
+  h1.script {
+    font-family: var(--font-banner);
+    font-weight: bold;
+    
+
+  }
+}
+
+@layer utilities {
+  .font-banner {
+    font-family: var(--font-league-script);
+  }
+  
+}
+
+@layer components {
+  .bg-french-vanilla {
+    @apply bg-accentYellow;
+  }
+  .bg-chocolate-icecream {
+    @apply bg-backgroundDark;
+  }
+  .bg-whipped-cream {
+    @apply bg-beige;
+  }
+  .bg-honey-lime {
+    @apply bg-brand;
+  }
+}
+
+
+/* === 1. Color + Font Variables (Light mode) === */
+:root {
+  --background: #ffffff;
+  --beige: #f0dca3;
+  --backgroundDark: #301310;
+  --foreground: #171717;
+
+  --primary: #00ff99;
+  --brand: #37ee17;
+  --accentNeonBlue: #2CE8F5;
+  --accentNeonYellow: #ffe100;
+  --alert: #FF395E;
+  --brainstorm: #9A6AFF;
+
+  /* Fonts loaded via layout.js */
+  --font-sans: var(--font-inter);
+  --font-banner: var(--font-league-script);
+  --font-oxanium: var(--font-oxanium);
+}
+
+/* === 2. Dark mode overrides === */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+    --surface: #1E2128;
+  }
+}
+
+/* === 3. Tailwind IntelliSense Token Aliases (Optional) === */
+@theme {
+  --color-background: var(--background);
+  --color-backgroundDark: var(--backgroundDark);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-brand: var(--brand);
+  --color-beige: var(--beige);
+  --color-accentBlue: var(--accentNeonBlue);
+  --color-accentYellow: var(--accentNeonYellow);
+  --color-alert: var(--alert);
+  --color-brainstorm: var(--brainstorm);
+
+  --font-sans: var(--font-sans);
+  --font-banner: var(--font-banner);
+  --font-oxanium: var(--font-oxanium);
+}
+
+/* === 4. Global Body Styling === */
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-inter);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+@keyframes stamp-slam {
+  0% {
+    transform: scale(5) rotate(0deg);
+    opacity: 0;
+  }
+  40% {
+    transform: scale(1) rotate(-8deg);
+    opacity: 1;
+  }
+  60% {
+    transform: scale(1.1) rotate(5deg);
+  }
+  80% {
+    transform: scale(0.95) rotate(-3deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+.stamp-animate {
+  animation: stamp-slam 2s ease-out forwards;
+}
+
+
+
+/* body::before {
+  content: "✅ globals.css loaded";
+  position: fixed;
+  top: 0;
+  left: 0;
+  font-size: 12px;
+  color: red;
+} */
