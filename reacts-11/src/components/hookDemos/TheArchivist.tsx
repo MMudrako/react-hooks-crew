@@ -1,7 +1,8 @@
 'use client'
 
 /* it would be nice to  remove glitchy empty traits on the bottom (left by the tracker) and for that we will use  useRef
-aka in my app as theArchivist - it stores a value that is not needed for rerendering */
+aka in my app as theArchivist - it stores a value that is not needed for rerendering or helps with control flow that 
+contain internal logic not intended for rendering */
 import React, { useState, useEffect, useRef } from 'react';
 import traits from "../../data/agentTraits.json"
 import { capitalize } from '../../lib/format';
@@ -42,11 +43,11 @@ function createDefaultAgent(): Agent {
         mode: "training",
         icon: "🕵️‍♂️",
         traits: {
-            regions: [""],
-            backgrounds: [""],
-            languages: [""],
-            martialArts: [""],
-            fieldRoles: [""]
+            regions: [],
+            backgrounds: [],
+            languages: [],
+            martialArts: [],
+            fieldRoles: []
         }
     }
 }
@@ -127,27 +128,29 @@ export default function TheArchivist() {
     // ----------------------------
     // useEffect #1: Load from localStorage
     // Runs ONLY once on mount ([])
-    // will not get stored the agent object on the first render
+    // will empty placeholders from the default agent
     // ----------------------------
     useEffect(() => {
-        if (isFirstRender.current) {
-            clearAgentTraits();
-            isFirstRender.current = false;
-            return;
-        }
 
         const storedAgent = localStorage.getItem(AGENT_KEY);
         if (storedAgent) {
             console.log('Loading agent from localStorage:', storedAgent);
             setAgent(JSON.parse(storedAgent));
+        } else {
+            setAgent(prev => ({ ...prev, traits: {} }))
         }
     }, []); // Empty dependency array = run once when component mounts
 
     // ----------------------------
-    // useEffect #2: Save to localStorage whenever `agent` changes
+    // useEffect #2: Save to localStorage whenever `agent` changes,
+    //except for first render when default agent gets created
     // Runs on initial mount AND on every `agent` state update
     // ----------------------------
     useEffect(() => {
+        if (isFirstRender.current) {
+            isFirstRender.current = false;
+            return; //skips the first save
+        }
         console.log('Saving agent to localStorage:', agent);
         localStorage.setItem(AGENT_KEY, JSON.stringify(agent));
     }, [agent]); // Dependency = agent
