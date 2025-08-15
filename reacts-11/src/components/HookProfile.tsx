@@ -7,6 +7,7 @@ import hooksDetails from '../data/hooksDetails.json';
 import TheArchivist from './hookDemos/TheArchivist';
 import TheArchitect from './hookDemos/TheArchitect';
 import { Hook } from "@/types"
+import AgentBuilder from './hookDemos/AgentBuilder'; //draft component for refactoring other demo components
 
 type HookId = 'useState' | 'useEffect' | 'useRef' | 'useContext';
 
@@ -14,7 +15,8 @@ const demoMap = {
     "useState": TheKeeper,
     "useEffect": TheTracker,
     "useRef": TheArchivist,
-    "useContext": TheArchitect
+    "useContext": TheArchitect,
+
 
 }
 export default function HookProfile({ hook }: { hook: Hook }) {

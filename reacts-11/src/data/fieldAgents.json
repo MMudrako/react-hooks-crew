@@ -1,6 +1,6 @@
 [
     {
-        "id": "agent-001",
+        "id": 1,
         "name": "Linus Blaze",
         "specialty": "Recon",
         "status": "Untrained",
@@ -9,7 +9,7 @@
         "icon": "🕵️‍♂️"
     },
     {
-        "id": "agent-002",
+        "id": 2,
         "name": "Max Voltage",
         "specialty": "Tech Infiltration",
         "status": "Trained",
@@ -18,7 +18,7 @@
         "icon": "💻"
     },
     {
-        "id": "agent-003",
+        "id": 3,
         "name": "Nova Skye",
         "specialty": "Negotiation",
         "status": "Training",
@@ -27,7 +27,7 @@
         "icon": "🧑‍🎤"
     },
     {
-        "id": "agent-004",
+        "id": 4,
         "name": "Jett Mirage",
         "specialty": "Surveillance",
         "status": "Untrained",
