@@ -12,9 +12,10 @@ type PageProps = {
 // Cast hooks JSON to Hook[]
 const hooksTyped = hooks as Hook[];
 
-export default function HookProfilePage({ params }: PageProps) {
+export default async function HookProfilePage({ params }: PageProps) {
     // Find the matching hook by id
-    const hook = hooksTyped.find((h) => h.id === params.id);
+    const { id } = await params;
+    const hook = hooksTyped.find((h) => h.id === id);
 
     if (!hook) {
         return <div>Hook not found</div>;

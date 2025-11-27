@@ -1,0 +1,200 @@
+[
+    {
+        "name": "Northland",
+        "theme": "cool",
+        "description": "The Northern Alliance — mountainous, glacial, and full of ancient fortresses.",
+        "historyAndEconomy": "Industrialized Tech-savy ",
+        "countries": [
+            {
+                "id": "bravak",
+                "name": "Bravak",
+                "language": "Bravaki",
+                "color": "#5A7DF2"
+            },
+            {
+                "id": "norven",
+                "name": "Norven",
+                "language": "Norvani",
+                "color": "#4E9DF9"
+            },
+            {
+                "id": "talyra",
+                "name": "Talyra",
+                "language": "Talyric",
+                "color": "#6CA6E8"
+            },
+            {
+                "id": "velmor",
+                "name": "Velmor",
+                "language": "Velmoran",
+                "color": "#7E87F9"
+            },
+            {
+                "id": "cryndor",
+                "name": "Cryndor",
+                "language": "Cryndorian",
+                "color": "#4A66B0"
+            },
+            {
+                "id": "eldmere",
+                "name": "Eldmere",
+                "language": "Eldmerian",
+                "color": "#5F77C5"
+            },
+            {
+                "id": "frostal",
+                "name": "Frostal",
+                "language": "Frostalic",
+                "color": "#7598E2"
+            },
+            {
+                "id": "harnvik",
+                "name": "Harnvik",
+                "language": "Harnvish",
+                "color": "#8AA3FF"
+            },
+            {
+                "id": "morrund",
+                "name": "Morrund",
+                "language": "Morrundian",
+                "color": "#6073D6"
+            },
+            {
+                "id": "thavros",
+                "name": "Thavros",
+                "language": "Thavric",
+                "color": "#4C6FD1"
+            }
+        ]
+    },
+    {
+        "name": "Midlands",
+        "theme": "neutral",
+        "description": "The Continental Bridge — fertile highlands and ancient trade crossroads.",
+        "historyAndEconomy": " ",
+        "countries": [
+            {
+                "id": "meridia",
+                "name": "Meridia",
+                "language": "Meridian",
+                "color": "#66B96A"
+            },
+            {
+                "id": "orthis",
+                "name": "Orthis",
+                "language": "Orthian",
+                "color": "#6FBF80"
+            },
+            {
+                "id": "sarlane",
+                "name": "Sarlane",
+                "language": "Sarlanic",
+                "color": "#5CA875"
+            },
+            {
+                "id": "vondar",
+                "name": "Vondar",
+                "language": "Vondari",
+                "color": "#78C485"
+            },
+            {
+                "id": "thyrel",
+                "name": "Thyrel",
+                "language": "Thyrelic",
+                "color": "#4A9B68"
+            },
+            {
+                "id": "kelvar",
+                "name": "Kelvar",
+                "language": "Kelvari",
+                "color": "#61B177"
+            },
+            {
+                "id": "yarven",
+                "name": "Yarven",
+                "language": "Yarvani",
+                "color": "#73B97E"
+            },
+            {
+                "id": "dravon",
+                "name": "Dravon",
+                "language": "Dravonic",
+                "color": "#7ECA7B"
+            },
+            {
+                "id": "erlun",
+                "name": "Erlun",
+                "language": "Erlunic",
+                "color": "#5AA467"
+            }
+        ]
+    },
+    {
+        "name": "Southland",
+        "theme": "warm",
+        "description": "The Southern Expanse — deserts, jungles, and great coastal empires.",
+        "historyAndEconomy": " ",
+        "countries": [
+            {
+                "id": "zahara",
+                "name": "Zahara",
+                "language": "Zahari",
+                "color": "#E69A4C"
+            },
+            {
+                "id": "teshar",
+                "name": "Teshar",
+                "language": "Teshari",
+                "color": "#E97B3D"
+            },
+            {
+                "id": "olyndra",
+                "name": "Olyndra",
+                "language": "Olyndric",
+                "color": "#F2A85B"
+            },
+            {
+                "id": "calvor",
+                "name": "Calvor",
+                "language": "Calvorian",
+                "color": "#E8642B"
+            },
+            {
+                "id": "nashara",
+                "name": "Nashara",
+                "language": "Nashari",
+                "color": "#F08949"
+            },
+            {
+                "id": "velthar",
+                "name": "Velthar",
+                "language": "Velthari",
+                "color": "#F2B86E"
+            },
+            {
+                "id": "kavren",
+                "name": "Kavren",
+                "language": "Kavrenic",
+                "color": "#D87536"
+            },
+            {
+                "id": "ulmar",
+                "name": "Ulmar",
+                "language": "Ulmaric",
+                "color": "#EA8C44"
+            },
+            {
+                "id": "sundor",
+                "name": "Sundor",
+                "language": "Sundoric",
+                "color": "#E07B3E"
+            },
+            {
+                "id": "pharel",
+                "name": "Pharel",
+                "language": "Pharelic",
+                "color": "#F29A55"
+            }
+        ]
+    }
+]

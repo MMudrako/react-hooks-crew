@@ -11,7 +11,8 @@
         ],
         "usedFor": "Managing inputs, toggles, counters, or any local stateful logic.",
         "icon": "🗃️",
-        "featured": true
+        "featured": true,
+        "level": 1
     },
     {
         "id": "useEffect",
@@ -25,7 +26,8 @@
         ],
         "usedFor": "Fetching data, syncing with external systems, or reacting to state changes.",
         "icon": "👨‍💻",
-        "featured": true
+        "featured": true,
+        "level": 1
     },
     {
         "id": "useMemo",
@@ -39,7 +41,8 @@
         ],
         "usedFor": "Avoiding recalculations in performance-heavy logic.",
         "icon": "🧠",
-        "featured": true
+        "featured": true,
+        "level": 1
     },
     {
         "id": "useCallback",
@@ -53,7 +56,8 @@
         ],
         "usedFor": "Passing stable callbacks to optimized components.",
         "icon": "🎯",
-        "featured": true
+        "featured": true,
+        "level": 1
     },
     {
         "id": "useRef",
@@ -67,11 +71,12 @@
         ],
         "usedFor": "Holding DOM elements or persistent values without triggering re-renders.",
         "icon": "📂",
-        "featured": false
+        "featured": false,
+        "level": 1
     },
     {
-        "id": "useContext",
-        "name": "The Architect",
+        "id": "useContext-basic",
+        "name": "The Architect Novice",
         "hook": "useContext",
         "role": "Sets the mission mode and shares it with the whole team.",
         "traits": [
@@ -81,7 +86,23 @@
         ],
         "usedFor": "Sharing theme, auth, or app-wide data between components.",
         "icon": "🏛️",
-        "featured": true
+        "featured": true,
+        "level": 1
+    },
+    {
+        "id": "useContext-advanced",
+        "name": "The Senior Architect",
+        "hook": "useContext",
+        "role": "Sets the mission mode and shares it with the whole team.",
+        "traits": [
+            "Accesses shared global state",
+            "Avoids prop drilling",
+            "Requires a Provider"
+        ],
+        "usedFor": "Sharing theme, auth, or app-wide data between components.",
+        "icon": "🏛️",
+        "featured": true,
+        "level": 2
     },
     {
         "id": "useReducer",
@@ -95,7 +116,8 @@
         ],
         "usedFor": "Handling forms, state machines, or structured updates.",
         "icon": "🧮",
-        "featured": true
+        "featured": true,
+        "level": 1
     },
     {
         "id": "useLayoutEffect",
@@ -109,7 +131,8 @@
         ],
         "usedFor": "Measuring layout or applying style fixes before screen paints.",
         "icon": "💄",
-        "featured": false
+        "featured": false,
+        "level": 2
     },
     {
         "id": "useImperativeHandle",
@@ -123,7 +146,8 @@
         ],
         "usedFor": "Exposing specific methods to parent components via refs.",
         "icon": "♣️",
-        "featured": false
+        "featured": false,
+        "level": 2
     },
     {
         "id": "useId",
@@ -137,7 +161,8 @@
         ],
         "usedFor": "Assigning consistent IDs for form fields and ARIA attributes.",
         "icon": "👩‍💻",
-        "featured": false
+        "featured": false,
+        "level": 2
     },
     {
         "id": "useTransition",
@@ -151,6 +176,7 @@
         ],
         "usedFor": "Delaying expensive updates like filtering or list rendering.",
         "icon": "🛫",
-        "featured": false
+        "featured": false,
+        "level": 1
     }
 ]

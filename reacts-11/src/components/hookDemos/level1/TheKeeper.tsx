@@ -11,8 +11,8 @@ in this demo we create an agent instance and user can select custom properties f
 which will be displayed at the bottom of ui */
 
 import React, { useState } from 'react';
-import traits from "../../data/agentTraits.json"
-import { capitalize } from '../../lib/format';
+import traits from "../../../data/agentTraits.json"
+import { capitalize } from '../../../lib/format';
 
 // --------------------
 // Type Definitions

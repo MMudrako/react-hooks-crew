@@ -11,7 +11,7 @@
     {
         "id": 2,
         "name": "Max Voltage",
-        "specialty": "Tech Infiltration",
+        "specialty": "Infiltration",
         "status": "Trained",
         "assignedBy": "The Sorter",
         "mode": "mission",
@@ -21,7 +21,7 @@
         "id": 3,
         "name": "Nova Skye",
         "specialty": "Negotiation",
-        "status": "Training",
+        "status": "InTraining",
         "assignedBy": "The Sorter",
         "mode": "brainstorm",
         "icon": "🧑‍🎤"
@@ -30,7 +30,7 @@
         "id": 4,
         "name": "Jett Mirage",
         "specialty": "Surveillance",
-        "status": "Untrained",
+        "status": "InTraining",
         "assignedBy": "The Sorter",
         "mode": "retreat",
         "icon": "📸"

@@ -1,0 +1,198 @@
+{
+  "regions": [
+    {
+      "name": "Northland",
+      "theme": "cool",
+      "description": "The Northern Alliance — mountainous, glacial, and full of ancient fortresses.",
+      "countries": [
+        {
+          "id": "bravak",
+          "name": "Bravak",
+          "language": "Bravaki"
+        },
+        {
+          "id": "norven",
+          "name": "Norven",
+          "language": "Norvani"
+        },
+        {
+          "id": "talyra",
+          "name": "Talyra",
+          "language": "Talyric"
+        },
+        {
+          "id": "velmor",
+          "name": "Velmor",
+          "language": "Velmoran"
+        },
+        {
+          "id": "cryndor",
+          "name": "Cryndor",
+          "language": "Cryndorian"
+        },
+        {
+          "id": "eldmere",
+          "name": "Eldmere",
+          "language": "Eldmerian"
+        },
+        {
+          "id": "frostal",
+          "name": "Frostal",
+          "language": "Frostalic"
+        },
+        {
+          "id": "harnvik",
+          "name": "Harnvik",
+          "language": "Harnvish"
+        },
+        {
+          "id": "morrund",
+          "name": "Morrund",
+          "language": "Morrundian"
+        },
+        {
+          "id": "thavros",
+          "name": "Thavros",
+          "language": "Thavric"
+        }
+      ]
+    },
+    {
+      "name": "Midlands",
+      "theme": "neutral",
+      "description": "The Continental Bridge — fertile highlands and ancient trade crossroads.",
+      "countries": [
+        {
+          "id": "meridia",
+          "name": "Meridia",
+          "language": "Meridian"
+        },
+        {
+          "id": "orthis",
+          "name": "Orthis",
+          "language": "Orthian"
+        },
+        {
+          "id": "sarlane",
+          "name": "Sarlane",
+          "language": "Sarlanic"
+        },
+        {
+          "id": "vondar",
+          "name": "Vondar",
+          "language": "Vondari"
+        },
+        {
+          "id": "thyrel",
+          "name": "Thyrel",
+          "language": "Thyrelic"
+        },
+        {
+          "id": "kelvar",
+          "name": "Kelvar",
+          "language": "Kelvari"
+        },
+        {
+          "id": "yarven",
+          "name": "Yarven",
+          "language": "Yarvani"
+        },
+        {
+          "id": "dravon",
+          "name": "Dravon",
+          "language": "Dravonic"
+        },
+        {
+          "id": "erlun",
+          "name": "Erlun",
+          "language": "Erlunic"
+        }
+      ]
+    },
+    {
+      "name": "Southland",
+      "theme": "warm",
+      "description": "The Southern Expanse — deserts, jungles, and coastal empires.",
+      "countries": [
+        {
+          "id": "zahara",
+          "name": "Zahara",
+          "language": "Zahari"
+        },
+        {
+          "id": "teshar",
+          "name": "Teshar",
+          "language": "Teshari"
+        },
+        {
+          "id": "olyndra",
+          "name": "Olyndra",
+          "language": "Olyndric"
+        },
+        {
+          "id": "calvor",
+          "name": "Calvor",
+          "language": "Calvorian"
+        },
+        {
+          "id": "nashara",
+          "name": "Nashara",
+          "language": "Nashari"
+        },
+        {
+          "id": "velthar",
+          "name": "Velthar",
+          "language": "Velthari"
+        },
+        {
+          "id": "kavren",
+          "name": "Kavren",
+          "language": "Kavrenic"
+        },
+        {
+          "id": "ulmar",
+          "name": "Ulmar",
+          "language": "Ulmaric"
+        },
+        {
+          "id": "sundor",
+          "name": "Sundor",
+          "language": "Sundoric"
+        },
+        {
+          "id": "pharel",
+          "name": "Pharel",
+          "language": "Pharelic"
+        }
+      ]
+    }
+  ],
+  "backgrounds": [
+    "Ex-Military",
+    "Cybersecurity Expert",
+    "Linguist",
+    "Con Artist",
+    "Pilot",
+    "Psychologist",
+    "Demolitions",
+    "Ex-Interpol"
+  ],
+  "martialArts": [
+    "None",
+    "Basic Self-Defense",
+    "Boxing",
+    "Krav Maga",
+    "Judo",
+    "Muay Thai",
+    "Mixed Martial Arts"
+  ],
+  "fieldRoles": [
+    "Recon",
+    "Surveillance",
+    "Communications",
+    "Infiltration",
+    "Extraction",
+    "Negotiation",
+    "Tech Support"
+  ]
+}

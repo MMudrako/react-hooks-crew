@@ -1,0 +1,120 @@
+[
+    {
+        "missionId": "M-001",
+        "missionName": "Operation Desert Veil",
+        "color": "yellow",
+        "backstory": "A covert intelligence leak has compromised key diplomatic channels in a desert country in Southland. An elite team must infiltrate a rogue network posing as foreign consultants within the capital tech sector.",
+        "regions": [
+            "Middland",
+            "Sounthland"
+        ],
+        "countries": [
+            {
+                "id": "",
+                "name": "",
+                "language": "",
+                "color": ""
+            }
+        ],
+        "requiredRoles": [
+            "Infiltration",
+            "Recon",
+            "Communications",
+            "Tech Support"
+        ]
+    },
+    {
+        "missionId": "M-002",
+        "missionName": "Operation Jade Circuit",
+        "color": "green",
+        "backstory": "Cybercriminals in Eastern Midland have hijacked an encrypted satellite link, rerouting intelligence data to black-market buyers. The mission demands surgical precision — stealth entry, decryption, and extraction before sunrise.",
+        "regions": [
+            "Middland",
+            "Northland"
+        ],
+        "countries": [
+            {
+                "id": "",
+                "name": "",
+                "language": "",
+                "color": ""
+            }
+        ],
+        "requiredRoles": [
+            "Tech Support",
+            "Surveillance",
+            "Extraction",
+            "Negotiation"
+        ]
+    },
+    {
+        "missionId": "M-003",
+        "missionName": "Operation Northern Echo",
+        "color": "orange",
+        "backstory": "A smuggling ring in Central South has evolved into a private paramilitary outfit. The mission objective is to intercept weapons trade data and neutralize leadership without triggering an international incident.",
+        "regions": [
+            "Southland",
+            "Northland"
+        ],
+        "countries": [
+            {
+                "id": "",
+                "name": "",
+                "language": "",
+                "color": ""
+            }
+        ],
+        "requiredRoles": [
+            "Recon",
+            "Infiltration",
+            "Negotiation",
+            "Extraction"
+        ]
+    },
+    {
+        "missionId": "M-004",
+        "missionName": "Operation Jungle Call",
+        "color": "dark green",
+        "backstory": "An offshore tech conglomerate in Oceania is suspected of laundering data for espionage. The operation requires precise coordination to breach digital and physical systems across multiple remote bases in savage rainforest.",
+        "regions": [
+            "Midland"
+        ],
+        "countries": [
+            {
+                "id": "",
+                "name": "",
+                "language": "",
+                "color": ""
+            }
+        ],
+        "requiredRoles": [
+            "Tech Support",
+            "Communications",
+            "Surveillance",
+            "Infiltration"
+        ]
+    },
+    {
+        "missionId": "M-005",
+        "missionName": "Operation Crimson Veins",
+        "color": "dark red",
+        "backstory": "A cross-countries cartel in Southland is using medical supply routes to smuggle advanced biowarfare components. The team must intercept logistics, identify the source, and escape undetected.",
+        "regions": [
+            "Southland"
+        ],
+        "countries": [
+            {
+                "id": "",
+                "name": "",
+                "language": "",
+                "color": ""
+            }
+        ],
+        "requiredRoles": [
+            "Recon",
+            "Negotiation",
+            "Infiltration",
+            "Extraction"
+        ]
+    }
+]

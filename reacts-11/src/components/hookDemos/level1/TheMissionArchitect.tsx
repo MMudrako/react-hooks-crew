@@ -1,12 +1,12 @@
 'use client';
 import { useState } from 'react';
-import { MissionContext } from '../context/MissionContext';
-import AgentCard from '../agents/AgentCard';
+import { MissionContext } from '../../context/MissionContext';
+import AgentCard from '../../agents/AgentCard';
 
 export interface Mission {
     missionMode: string
 }
-export default function TheArchitect() {
+export default function TheMissionArchitect() {
     const [mission, setMission] = useState<Mission>({ missionMode: 'stealth' });
     const { missionMode } = mission;
 

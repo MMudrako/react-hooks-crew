@@ -1,21 +1,39 @@
 
 import Image from 'next/image';
 import { capitalize } from '../lib/format';
-import TheKeeper from './hookDemos/TheKeeper';
-import TheTracker from './hookDemos/TheTracker';
+import TheKeeper from './hookDemos/level1/TheKeeper';
+import TheTracker from './hookDemos/level1/TheTracker';
 import hooksDetails from '../data/hooksDetails.json';
-import TheArchivist from './hookDemos/TheArchivist';
-import TheArchitect from './hookDemos/TheArchitect';
+import TheArchivist from './hookDemos/level1/TheArchivist';
+import TheArchitect from './hookDemos/level2/TheArchitect';
+import ArchitectProvider from './context/ArchitectContext';
+import TheMissionArchitect from './hookDemos/level1/TheMissionArchitect';
+import TheSorter from './drafts/TheSorter-Archive';
 import { Hook } from "@/types"
-import AgentBuilder from './hookDemos/AgentBuilder'; //draft component for refactoring other demo components
+import LegendBuilder from './hookDemos/AgentBuilder'; //draft component for refactoring other demo components
 
-type HookId = 'useState' | 'useEffect' | 'useRef' | 'useContext';
+import TheMemoizer from './hookDemos/level1/TheMemoizer';
+import TheMentor from './hookDemos/level1/TheMentor';
+import TheDispatcher from './hookDemos/level1/TheDispatcher';
+import TheStylist from './hookDemos/level2/TheStylist'
 
-const demoMap = {
+type HookId1 = 'useState' | 'useEffect' | 'useRef' | 'useContext-basic' | 'useMemo' | 'useCallback' | "useTransition" | "useReducer";
+type HookId2 = 'useContext-advanced' | 'useLayoutEffect'
+const level1DemoMap = {
     "useState": TheKeeper,
     "useEffect": TheTracker,
     "useRef": TheArchivist,
-    "useContext": TheArchitect,
+    "useContext-basic": TheMissionArchitect,
+    "useMemo": TheMemoizer,
+    "useCallback": TheMentor,
+    "useTransition": TheDispatcher,
+    "useReducer": TheSorter
+
+}
+
+const level2DemoMap = {
+    "useContext-advanced": TheArchitect,
+    "useLayoutEffect": TheStylist
 
 
 }
@@ -27,8 +45,10 @@ export default function HookProfile({ hook }: { hook: Hook }) {
 
     }
     const profile = hooksDetails.find(entry => entry.id === hook.id);
-    const hookId = hook.id as HookId;
-    const DemoComponent = demoMap[hookId] ?? null;
+    const hookId1 = hook.id as HookId1;
+    const hookId2 = hook.id as HookId2;
+    const DemoComponentLevel1 = level1DemoMap[hookId1] ?? null;
+    const DemoComponentLevel2 = level2DemoMap[hookId2] ?? null;
     return (
 
         <main className='main  ml-20' >
@@ -115,7 +135,17 @@ export default function HookProfile({ hook }: { hook: Hook }) {
                     </div>
                     < div className='output border border-foreground  ' >
                         <h3>Ops Panel tabs Strategy and Visual Evidence and will be here </h3>
-                        < DemoComponent />
+                        {DemoComponentLevel1 && !DemoComponentLevel2 &&
+                            (< DemoComponentLevel1 />
+
+                            )}
+                        {DemoComponentLevel2 && (
+                            <ArchitectProvider>
+                                <DemoComponentLevel2 />
+                            </ArchitectProvider>
+                        )}
+
+
                     </div>
 
                 </div>

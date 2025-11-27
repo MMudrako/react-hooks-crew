@@ -3,8 +3,8 @@
 /* now we woul like to actually asign these traits and preserve the new agent instance 
 in the local storage */
 import React, { useState, useEffect } from 'react';
-import traits from "../../data/agentTraits.json"
-import { capitalize } from '../../lib/format';
+import traits from "../../../data/agentTraits.json"
+import { capitalize } from '../../../lib/format';
 
 // ----------------------------
 // Type definitions

@@ -1,0 +1,117 @@
+{
+  "fieldRoles": [
+    {
+      "Recon": {
+        "coreTraits": [
+          "Ex-Military",
+          "Tracker",
+          "Special Forces Training"
+        ],
+        "optionalTraits": [
+          "Stealthy",
+          "Adaptable",
+          "Quick Thinker"
+        ]
+      },
+      "Surveillance": {
+        "coreTraits": [
+          "Ex-Interpol",
+          "Intelligence Analyst",
+          "Electronics Expert"
+        ],
+        "optionalTraits": [
+          "Observant",
+          "Patient",
+          "Tech-Savvy"
+        ]
+      },
+      "Communications": {
+        "coreTraits": [
+          "Linguist",
+          "Psychologist",
+          "Negotiator"
+        ],
+        "optionalTraits": [
+          "Charismatic",
+          "Calm Under Pressure",
+          "Empathetic"
+        ]
+      },
+      "Infiltration": {
+        "coreTraits": [
+          "Con Artist",
+          "Thief",
+          "Spy Training"
+        ],
+        "optionalTraits": [
+          "Deceptive",
+          "Agile",
+          "Clever"
+        ]
+      },
+      "Extraction": {
+        "coreTraits": [
+          "Pilot",
+          "Ex-Military",
+          "Driver"
+        ],
+        "optionalTraits": [
+          "Brave",
+          "Resourceful",
+          "Loyal"
+        ]
+      },
+      "Negotiation": {
+        "coreTraits": [
+          "Diplomat",
+          "Psychologist",
+          "Lawyer"
+        ],
+        "optionalTraits": [
+          "Persuasive",
+          "Strategic",
+          "Empathetic"
+        ]
+      },
+      "Tech Support": {
+        "coreTraits": [
+          "Computer Scientist",
+          "Hacker",
+          "Engineer"
+        ],
+        "optionalTraits": [
+          "Innovative",
+          "Analytical",
+          "Problem-Solver"
+        ]
+      }
+    }
+  ],
+  "sharedTraits": {
+    "softSkills": [
+      "Leadership",
+      "Adaptability",
+      "Persuasion",
+      "Teamwork",
+      "Problem-Solving",
+      "Attention to Detail"
+    ],
+    "martialArts": [
+      "None",
+      "Basic Self-Defense",
+      "Boxing",
+      "Krav Maga",
+      "Judo",
+      "Muay Thai",
+      "Mixed Martial Arts"
+    ],
+    "psychotypes": [
+      "Analytical",
+      "Calm",
+      "Impulsive",
+      "Strategic",
+      "Empathetic",
+      "Resilient"
+    ]
+  }
+}

@@ -6,7 +6,13 @@ const nextConfig: NextConfig = {
     config.module.rules.push({
       test: /\.svg$/,
       issuer: /\.[jt]sx?$/,
-      use: ['@svgr/webpack'],
+      use: [
+        {
+          loader: '@svgr/webpack',
+          options: {
+            ref: true //enable forwardRef in client components
+          },
+        }],
     });
     return config;
   }

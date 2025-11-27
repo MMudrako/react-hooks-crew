@@ -1,11 +1,11 @@
 'use client'
 
-/* it would be nice to  remove glitchy empty traits on the bottom (left by the tracker) and for that we will use  useRef
-aka in my app as theArchivist - it stores a value that is not needed for rerendering or helps with control flow that 
-contain internal logic not intended for rendering */
-import React, { useState, useEffect, useRef } from 'react';
-import traits from "../../data/agentTraits.json"
-import { capitalize } from '../../lib/format';
+/* now it is time to create a legend for the custom agent, and in order to preserve expensive and unique calculation 
+to create a prompt for external API call our next hook hero useMemo comes to the rescue */
+import React, { useState, useEffect, useRef, useMemo } from 'react';
+import traits from "../../../data/agentTraits.json"
+import { capitalize } from '../../../lib/format';
+import LegendBuilderMemo from '../AgentBuilder';
 
 
 // ----------------------------
@@ -58,7 +58,7 @@ const agentTraits: Traits = traits;
 // LocalStorage key MUST be a string
 const AGENT_KEY = 'agent';
 
-export default function TheArchivist() {
+export default function TheMemoizer() {
     // Stores the trait selections from form inputs before committing to agent
     const [selectedTraits, setSelectedTraits] = useState<Record<string, string[]>>({});
 
@@ -72,9 +72,55 @@ export default function TheArchivist() {
     //test if it is the first render
     const isFirstRender = useRef(true);
 
+    const [legend, setLegend] = useState("");
+    const [loading, setLoading] = useState(false);
+
+    // 1. Build dynamic prompt from traits (expensive, but memoized)
+
+    const prompt = useMemo(() => {
+
+        console.log("Building prompt...");
+        const { regions, backgrounds, languages, martialArts, fieldRoles } = agent.traits ?? {};
+
+        return `
+                Write a heroic legend about an agent:
+
+                Name: ${agent.name}
+                Specialty: ${agent.specialty}
+                Status: ${agent.status}
+                Assigned By: ${agent.assignedBy}
+                Mode: ${agent.mode}
+
+                ${regions && regions.length > 0
+                ? `This agent had missions in the ${regions.join(", ")}.`
+                : `This agent has yet to explore their first region.`}
+
+                ${fieldRoles && fieldRoles.length > 0
+                ? `They often served in roles such as ${fieldRoles.join(", ")}.`
+                : `Their role remains undefined.`}
+
+                ${backgrounds && backgrounds.length > 0
+                ? `They came from a ${backgrounds.join(", ")} background.`
+                : `Their background remains a mystery.`}
+
+                ${languages && languages.length > 0
+                ? `They speak ${languages.join(", ")}.`
+                : `They have no known spoken languages.`}
+
+                ${martialArts && martialArts.length > 0
+                ? `They are skilled in ${martialArts.join(", ")}.`
+                : `They have yet to master any martial art.`}
+                `;
+    }, [agent]);
+
+
+
+
+
 
     // ----------------------------
-    // Event handlers for form changes
+    // Event handlers for f
+    // orm changes
     // ----------------------------
     const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { value, checked } = e.target;
@@ -125,6 +171,9 @@ export default function TheArchivist() {
         }));
     };
 
+
+
+
     // ----------------------------
     // useEffect #1: Load from localStorage
     // Runs ONLY once on mount ([])
@@ -134,13 +183,42 @@ export default function TheArchivist() {
 
         const storedAgent = localStorage.getItem(AGENT_KEY);
         if (storedAgent) {
-            console.log('Loading agent from localStorage:', storedAgent);
-            setAgent(JSON.parse(storedAgent));
+            try {
+                const parsed = JSON.parse(storedAgent);
+                console.log('Loading agent from localStorage:', storedAgent);
+                if (parsed && typeof parsed === "object") {
+                    setAgent({
+                        ...defaultAgent,
+                        ...parsed,
+                        traits: parsed.traits && typeof parsed.traits === "object"
+                            ? parsed.traits
+                            : {}
+                    });
+                }
+            } catch {
+                //corrupted JSON: return to default
+                setAgent(defaultAgent)
+            }
         } else {
-            setAgent(prev => ({ ...prev, traits: {} }))
+            setAgent(defaultAgent)
         }
     }, []); // Empty dependency array = run once when component mounts
 
+    // 2. ✅ Trigger fetch manually when clicking the button
+    const handleGenerate = () => {
+        if (!prompt) return;
+
+        setLoading(true);
+        fetch("/api/generate-legend", {
+            method: "POST",
+            body: JSON.stringify({ prompt }),
+        })
+            .then((res) => res.json())
+            .then((data) => {
+                setLegend(data.output); // store result
+            })
+            .finally(() => setLoading(false));
+    }
     // ----------------------------
     // useEffect #2: Save to localStorage whenever `agent` changes,
     //except for first render when default agent gets created
@@ -265,6 +343,8 @@ export default function TheArchivist() {
                     </div>
                 ))}
             </div>
+            {/* Display AI generated agent legend */}
+            <LegendBuilderMemo prompt={prompt} />
 
 
         </>

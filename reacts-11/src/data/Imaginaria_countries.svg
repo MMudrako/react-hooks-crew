@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="600">
+<g id="northland">
+<rect id="bravak" x="120" y="80" width="40" height="25" fill="#5A7DF2" />
+<rect id="norven" x="200" y="60" width="40" height="25" fill="#4E9DF9" />
+<rect id="talyra" x="260" y="90" width="40" height="25" fill="#6CA6E8" />
+<rect id="velmor" x="180" y="130" width="40" height="25" fill="#7E87F9" />
+<rect id="cryndor" x="150" y="160" width="40" height="25" fill="#4A66B0" />
+<rect id="eldmere" x="240" y="160" width="40" height="25" fill="#5F77C5" />
+<rect id="frostal" x="300" y="130" width="40" height="25" fill="#7598E2" />
+<rect id="harnvik" x="340" y="100" width="40" height="25" fill="#8AA3FF" />
+<rect id="morrund" x="280" y="190" width="40" height="25" fill="#6073D6" />
+<rect id="thavros" x="210" y="200" width="40" height="25" fill="#4C6FD1" />
+</g>
+<g id="midlands">
+<rect id="meridia" x="180" y="260" width="40" height="25" fill="#66B96A" />
+<rect id="orthis" x="250" y="250" width="40" height="25" fill="#6FBF80" />
+<rect id="sarlane" x="320" y="240" width="40" height="25" fill="#5CA875" />
+<rect id="vondar" x="130" y="280" width="40" height="25" fill="#78C485" />
+<rect id="thyrel" x="280" y="290" width="40" height="25" fill="#4A9B68" />
+<rect id="kelvar" x="220" y="310" width="40" height="25" fill="#61B177" />
+<rect id="yarven" x="350" y="280" width="40" height="25" fill="#73B97E" />
+<rect id="dravon" x="150" y="320" width="40" height="25" fill="#7ECA7B" />
+<rect id="erlun" x="290" y="330" width="40" height="25" fill="#5AA467" />
+</g>
+<g id="southland"><rect id="zahara" x="170" y="400" width="40" height="25" fill="#E69A4C" />
+<rect id="teshar" x="220" y="410" width="40" height="25" fill="#E97B3D" />
+<rect id="olyndra" x="280" y="420" width="40" height="25" fill="#F2A85B" />
+<rect id="calvor" x="330" y="440" width="40" height="25" fill="#E8642B" />
+<rect id="nashara" x="250" y="450" width="40" height="25" fill="#F08949" />
+<rect id="velthar" x="180" y="470" width="40" height="25" fill="#F2B86E" />
+<rect id="kavren" x="300" y="470" width="40" height="25" fill="#D87536" />
+<rect id="ulmar" x="370" y="460" width="40" height="25" fill="#EA8C44" />
+<rect id="sundor" x="260" y="490" width="40" height="25" fill="#E07B3E" />
+<rect id="pharel" x="320" y="500" width="40" height="25" fill="#F29A55" />
+</g>
+</svg>

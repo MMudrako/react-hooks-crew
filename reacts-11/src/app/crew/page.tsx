@@ -4,21 +4,34 @@ import hooks from "../../data/hooks.json";
 
 export default function CrewCardsPage() {
 
-    return (
-        <div className="bg-white" >
-            <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8" >
-                <h2 className="text-2xl font-bold tracking-tight text-foreground" > Meet the Main Head Quarete Crew </h2>
-                < h1 className="text-2xl font-bold tracking-tight bg-backgroundDark text-brand" > Mighty {`React's`} 11: </h1>
+    const level1Hooks = hooks.filter(h => h.level === 1);
+    const level2Hooks = hooks.filter(h => h.level === 2);
 
-                < div className="mt-6 grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3 lg:grid-cols-4 xl:gap-x-8" >
-                    {
-                        hooks.map((hook) => (
-                            <HookCard key={hook.id} hook={hook} />
-                        ))
-                    }
+    return (
+        <div className="bg-white">
+            <div className="mx-auto max-w-7xl px-8 py-16">
+                <h2 className="text-2xl font-bold text-foreground">
+                    Meet the Main Headquarters Crew
+                </h2>
+
+                <h3 className="text-xl font-bold mt-8 text-brand">
+                    Level 1 – Independent Agents
+                </h3>
+                <div className="mt-6 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
+                    {level1Hooks.map(hook => (
+                        <HookCard key={hook.id} hook={hook} />
+                    ))}
+                </div>
+
+                <h3 className="text-xl font-bold mt-12 text-brand">
+                    Level 2 – Crew Missions
+                </h3>
+                <div className="mt-6 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
+                    {level2Hooks.map(hook => (
+                        <HookCard key={hook.id} hook={hook} />
+                    ))}
                 </div>
             </div>
-
         </div>
-    )
+    );
 }
