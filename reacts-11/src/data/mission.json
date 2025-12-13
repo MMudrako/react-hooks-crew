@@ -3,17 +3,17 @@
         "missionId": "M-001",
         "missionName": "Operation Desert Veil",
         "color": "yellow",
-        "backstory": "A covert intelligence leak has compromised key diplomatic channels in a desert country in Southland. An elite team must infiltrate a rogue network posing as foreign consultants within the capital tech sector.",
+        "backstory": "A covert intelligence breach has compromised diplomatic trade channels in a Southland desert state. A rogue network embedded within the capital technology sector is manipulating resource contracts tied to rare mineral exports. An elite team must infiltrate the operation and expose its leadership without disrupting regional trade balance.",
         "regions": [
-            "Middland",
-            "Sounthland"
+            "Southland",
+            "Midlands"
         ],
         "countries": [
             {
-                "id": "",
-                "name": "",
-                "language": "",
-                "color": ""
+                "id": "zahara",
+                "name": "Zahara",
+                "language": "Zahari",
+                "color": "#E69A4C"
             }
         ],
         "requiredRoles": [
@@ -27,17 +27,17 @@
         "missionId": "M-002",
         "missionName": "Operation Jade Circuit",
         "color": "green",
-        "backstory": "Cybercriminals in Eastern Midland have hijacked an encrypted satellite link, rerouting intelligence data to black-market buyers. The mission demands surgical precision — stealth entry, decryption, and extraction before sunrise.",
+        "backstory": "A cybercrime syndicate operating along Midland trade corridors has hijacked an encrypted satellite relay used for mineral logistics coordination. Intelligence suggests Northland manufacturing data is being rerouted to black market buyers. The team must secure the uplink, recover encrypted schematics, and extract before detection.",
         "regions": [
-            "Middland",
+            "Midlands",
             "Northland"
         ],
         "countries": [
             {
-                "id": "",
-                "name": "",
-                "language": "",
-                "color": ""
+                "id": "thyrel",
+                "name": "Thyrel",
+                "language": "Thyrelic",
+                "color": "#4A9B68"
             }
         ],
         "requiredRoles": [
@@ -51,17 +51,17 @@
         "missionId": "M-003",
         "missionName": "Operation Northern Echo",
         "color": "orange",
-        "backstory": "A smuggling ring in Central South has evolved into a private paramilitary outfit. The mission objective is to intercept weapons trade data and neutralize leadership without triggering an international incident.",
+        "backstory": "A weapons smuggling network based in Southland has expanded into a disciplined paramilitary force supplying illegal arms to fringe factions. Intelligence indicates covert buyers within Northland border territories. The mission objective is to intercept trade data and dismantle command leadership without triggering open conflict.",
         "regions": [
             "Southland",
             "Northland"
         ],
         "countries": [
             {
-                "id": "",
-                "name": "",
-                "language": "",
-                "color": ""
+                "id": "calvor",
+                "name": "Calvor",
+                "language": "Calvorian",
+                "color": "#E8642B"
             }
         ],
         "requiredRoles": [
@@ -74,17 +74,17 @@
     {
         "missionId": "M-004",
         "missionName": "Operation Jungle Call",
-        "color": "dark green",
-        "backstory": "An offshore tech conglomerate in Oceania is suspected of laundering data for espionage. The operation requires precise coordination to breach digital and physical systems across multiple remote bases in savage rainforest.",
+        "color": "darkGreen",
+        "backstory": "A multinational data consortium operating from dense southern jungles is suspected of laundering intelligence through agricultural export systems. Multiple remote facilities process both biological research data and trade logistics. The operation requires synchronized digital breach and ground infiltration across hostile terrain.",
         "regions": [
-            "Midland"
+            "Southland"
         ],
         "countries": [
             {
-                "id": "",
-                "name": "",
-                "language": "",
-                "color": ""
+                "id": "velthar",
+                "name": "Velthar",
+                "language": "Velthari",
+                "color": "#F2B86E"
             }
         ],
         "requiredRoles": [
@@ -97,17 +97,18 @@
     {
         "missionId": "M-005",
         "missionName": "Operation Crimson Veins",
-        "color": "dark red",
-        "backstory": "A cross-countries cartel in Southland is using medical supply routes to smuggle advanced biowarfare components. The team must intercept logistics, identify the source, and escape undetected.",
+        "color": "darkRed",
+        "backstory": "A cartel spanning multiple Southland states is exploiting medical supply routes to smuggle advanced bio reactive components. These materials are traced back to jungle research zones and Midland distribution hubs. The team must disrupt logistics, identify the source network, and exit without exposing regional partners.",
         "regions": [
-            "Southland"
+            "Southland",
+            "Midlands"
         ],
         "countries": [
             {
-                "id": "",
-                "name": "",
-                "language": "",
-                "color": ""
+                "id": "nashara",
+                "name": "Nashara",
+                "language": "Nashari",
+                "color": "#F08949"
             }
         ],
         "requiredRoles": [

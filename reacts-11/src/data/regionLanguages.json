@@ -2,129 +2,148 @@
     {
         "name": "Northland",
         "theme": "cool",
-        "description": "The Northern Alliance — mountainous, glacial, and full of ancient fortresses.",
-        "historyAndEconomy": "Industrialized Tech-savy ",
+        "description": "The Northern Alliance is mountainous, glacial, and filled with ancient fortresses. The harsh climate breeds resilience, and the population is known for discipline, endurance, and strong clan traditions. Remote highlands hide old citadels and long forgotten watchtowers that still hum faintly with arcane technology.",
+        "historyAndEconomy": "Northland was once divided among rival clans and fortress states locked in territorial conflict. Unification under the Alliance Treaty created stability and allowed focus on defense, engineering, and technological advancement. Today the region is known for industrial research hubs, precision manufacturing, and cold weather engineering exports that support much of Imaginaria.",
         "countries": [
             {
                 "id": "bravak",
                 "name": "Bravak",
                 "language": "Bravaki",
+                "description": "Bravak is a rugged highland nation defined by fortified cliffside cities and elite mountain rangers. The population values stoicism and precision engineering, producing reliable cold weather machinery.",
                 "color": "#5A7DF2"
             },
             {
                 "id": "norven",
                 "name": "Norven",
                 "language": "Norvani",
-                "color": "#4E9DF9"
+                "description": "Norven spans frozen valleys and hosts observatories that track auroral and atmospheric patterns. Scholars from Norven are respected experts in climate science and glacial mapping.",
+                "color": "#4F6AE0"
             },
             {
                 "id": "talyra",
                 "name": "Talyra",
                 "language": "Talyric",
-                "color": "#6CA6E8"
+                "description": "Talyra grew around ancient fortress monasteries that now operate as research academies. Cultural tradition blends spiritual practice with advanced metallurgy.",
+                "color": "#6D8AF7"
             },
             {
                 "id": "velmor",
                 "name": "Velmor",
                 "language": "Velmoran",
-                "color": "#7E87F9"
+                "description": "Velmor occupies the Windcut Plateau where massive turbines harvest energy from mountain currents. Engineering cooperation defines both industry and culture.",
+                "color": "#5973DD"
             },
             {
                 "id": "cryndor",
                 "name": "Cryndor",
                 "language": "Cryndorian",
-                "color": "#4A66B0"
+                "description": "Cryndor contains large glacier mining operations extracting rare minerals from deep ice fissures. Mining settlements are protected by reinforced glass domes.",
+                "color": "#809BFF"
             },
             {
                 "id": "eldmere",
                 "name": "Eldmere",
                 "language": "Eldmerian",
-                "color": "#5F77C5"
+                "description": "Eldmere features forested fjords and wooden citadels protected by ice cliffs. Shipwrights craft hybrid wooden metal vessels designed for frozen seas.",
+                "color": "#4C74C8"
             },
             {
                 "id": "frostal",
                 "name": "Frostal",
                 "language": "Frostalic",
-                "color": "#7598E2"
+                "description": "Frostal lies near the shifting Northern Gate ice bridge. Navigation beacon systems maintained here guide explorers and traders.",
+                "color": "#7BA2FF"
             },
             {
                 "id": "harnvik",
                 "name": "Harnvik",
                 "language": "Harnvish",
-                "color": "#8AA3FF"
+                "description": "Harnvik hosts major port cities carved into coastal ice faces. The region supports a strong armored cargo fleet.",
+                "color": "#4F6ECF"
             },
             {
                 "id": "morrund",
                 "name": "Morrund",
                 "language": "Morrundian",
-                "color": "#6073D6"
+                "description": "Morrund covers tundra plains dotted with geothermal settlements. Underground heat supports agricultural domes and energy research.",
+                "color": "#6A86E8"
             },
             {
                 "id": "thavros",
                 "name": "Thavros",
                 "language": "Thavric",
-                "color": "#4C6FD1"
+                "description": "Thavros guards the Skyforge Pass through the tallest peaks. Metalworkers here produce alloys stable under extreme cold conditions.",
+                "color": "#8FA8FF"
             }
         ]
     },
     {
         "name": "Midlands",
         "theme": "neutral",
-        "description": "The Continental Bridge — fertile highlands and ancient trade crossroads.",
-        "historyAndEconomy": " ",
+        "description": "The Continental Bridge connects regions through fertile highlands and historic trade routes. Rivers, caravan roads, and elevated plains make the area a center for diplomacy, commerce, and intelligence activity.",
+        "historyAndEconomy": "The Midlands prosper as neutral ground by remaining indispensable to regional trade. Large scale agriculture produces exotic fruits and medicinal plants, while deep mineral deposits supply materials essential for northern manufacturing. This economic interdependence fuels cooperation while also creating political pressure and competing interests.",
         "countries": [
             {
                 "id": "meridia",
                 "name": "Meridia",
                 "language": "Meridian",
+                "description": "Meridia hosts major treaty halls and international markets. Refined mineral alloys exported from Meridia support advanced manufacturing projects.",
                 "color": "#66B96A"
             },
             {
                 "id": "orthis",
                 "name": "Orthis",
                 "language": "Orthian",
+                "description": "Orthis controls central river passages linking regional trade routes. Port fortresses regulate transport and taxation.",
                 "color": "#6FBF80"
             },
             {
                 "id": "sarlane",
                 "name": "Sarlane",
                 "language": "Sarlanic",
+                "description": "Sarlane maintains vast orchards producing rare fruits used in medicine and luxury goods. Exports travel to both northern and southern markets.",
                 "color": "#5CA875"
             },
             {
                 "id": "vondar",
                 "name": "Vondar",
                 "language": "Vondari",
+                "description": "Vondar contains high value mineral veins beneath the highlands. Extraction methods emphasize long term sustainability.",
                 "color": "#78C485"
             },
             {
                 "id": "thyrel",
                 "name": "Thyrel",
                 "language": "Thyrelic",
+                "description": "Thyrel specializes in mineral refinement and crystal lattice processing. Components produced here power energy systems across Imaginaria.",
                 "color": "#4A9B68"
             },
             {
                 "id": "kelvar",
                 "name": "Kelvar",
                 "language": "Kelvari",
+                "description": "Kelvar produces grain, fruits, and medicinal crops at scale. Trade caravans depart daily toward multiple regions.",
                 "color": "#61B177"
             },
             {
                 "id": "yarven",
                 "name": "Yarven",
                 "language": "Yarvani",
+                "description": "Yarven stands at the intersection of three major trade routes. Information exchange and illicit trade attract intelligence interest.",
                 "color": "#73B97E"
             },
             {
                 "id": "dravon",
                 "name": "Dravon",
                 "language": "Dravonic",
+                "description": "Dravon balances mining expansion with agricultural land use. Disputes over territory make the region politically sensitive.",
                 "color": "#7ECA7B"
             },
             {
                 "id": "erlun",
                 "name": "Erlun",
                 "language": "Erlunic",
+                "description": "Erlun trains negotiators and logistics strategists. Supply chain planning from Erlun supports interregional stability.",
                 "color": "#5AA467"
             }
         ]
@@ -132,67 +151,77 @@
     {
         "name": "Southland",
         "theme": "warm",
-        "description": "The Southern Expanse — deserts, jungles, and great coastal empires.",
-        "historyAndEconomy": " ",
+        "description": "The Southern Expanse spans deserts, jungles, and powerful coastal empires. Extreme environments make the region dangerous but economically essential. Control of ports and trade corridors shapes regional power.",
+        "historyAndEconomy": "Southland wealth derives from land and seas rich in biological and mineral resources. Exotic fruits, medicinal plants, and rare compounds support regional industries and advanced technology elsewhere. Political instability, piracy, and black market trade often disrupt supply chains, creating constant pressure for cooperation and intervention.",
         "countries": [
             {
                 "id": "zahara",
                 "name": "Zahara",
                 "language": "Zahari",
+                "description": "Zahara controls major desert caravan routes linking inland resources to coastal ports. Oasis cities function as strategic commercial hubs.",
                 "color": "#E69A4C"
             },
             {
                 "id": "teshar",
                 "name": "Teshar",
                 "language": "Teshari",
+                "description": "Teshar jungles produce bio reactive plants used in advanced medicine. Export restrictions increase black market activity.",
                 "color": "#E97B3D"
             },
             {
                 "id": "olyndra",
                 "name": "Olyndra",
                 "language": "Olyndric",
+                "description": "Olyndra operates extensive port cities and trade fleets. Maritime routes often require armed escorts.",
                 "color": "#F2A85B"
             },
             {
                 "id": "calvor",
                 "name": "Calvor",
                 "language": "Calvorian",
+                "description": "Calvor volcanic highlands yield heat resistant minerals critical for extreme environment engineering.",
                 "color": "#E8642B"
             },
             {
                 "id": "nashara",
                 "name": "Nashara",
                 "language": "Nashari",
+                "description": "Nashara river deltas support large scale fruit and spice production. Seasonal flooding complicates logistics planning.",
                 "color": "#F08949"
             },
             {
                 "id": "velthar",
                 "name": "Velthar",
                 "language": "Velthari",
+                "description": "Velthar jungles conceal ancient bio archives and abandoned research sites. Knowledge recovered here remains controversial.",
                 "color": "#F2B86E"
             },
             {
                 "id": "kavren",
                 "name": "Kavren",
                 "language": "Kavrenic",
+                "description": "Kavren controls narrow coastal passages critical for shipping. Political instability frequently disrupts trade agreements.",
                 "color": "#D87536"
             },
             {
                 "id": "ulmar",
                 "name": "Ulmar",
                 "language": "Ulmaric",
+                "description": "Ulmar hosts competing interests between extraction operations and environmental protection groups.",
                 "color": "#EA8C44"
             },
             {
                 "id": "sundor",
                 "name": "Sundor",
                 "language": "Sundoric",
+                "description": "Sundor jungles remain largely unmapped. Hidden routes support unauthorized trade networks.",
                 "color": "#E07B3E"
             },
             {
                 "id": "pharel",
                 "name": "Pharel",
                 "language": "Pharelic",
+                "description": "Pharel trains elite navigators and builds storm resistant ships. High risk maritime transport depends on this expertise.",
                 "color": "#F29A55"
             }
         ]

@@ -1,0 +1,61 @@
+{
+  "languages": [
+    "Bravaki",
+    "Norvani",
+    "Talyric",
+    "Velmoran",
+    "Cryndorian",
+    "Eldmerian",
+    "Frostalic",
+    "Harnvish",
+    "Morrundian",
+    "Thavric",
+    "Meridian",
+    "Orthian",
+    "Sarlanic",
+    "Vondari",
+    "Thyrelic",
+    "Kelvari",
+    "Yarvani",
+    "Dravonic",
+    "Erlunic",
+    "Zahari",
+    "Teshari",
+    "Olyndric",
+    "Calvorian",
+    "Nashari",
+    "Velthari",
+    "Kavrenic",
+    "Ulmaric",
+    "Sundoric",
+    "Pharelic"
+  ],
+  "backgrounds": [
+    "Ex-Military",
+    "Cybersecurity Expert",
+    "Linguist",
+    "Con Artist",
+    "Pilot",
+    "Psychologist",
+    "Demolitions",
+    "Ex-Interpol"
+  ],
+  "martialArts": [
+    "None",
+    "Basic Self-Defense",
+    "Boxing",
+    "Krav Maga",
+    "Judo",
+    "Muay Thai",
+    "Mixed Martial Arts"
+  ],
+  "fieldRoles": [
+    "Recon",
+    "Surveillance",
+    "Communications",
+    "Infiltration",
+    "Extraction",
+    "Negotiation",
+    "Tech Support"
+  ]
+}
