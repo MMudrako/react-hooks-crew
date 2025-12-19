@@ -11,7 +11,7 @@ in this demo we create an agent instance and user can select custom properties f
 which will be displayed at the bottom of ui */
 
 import React, { useState } from 'react';
-import traits from "../../../data/agentTraits.json"
+import traits from "../../../data/imaginariaAgentTraits.json"
 import { capitalize } from '../../../lib/format';
 
 // --------------------
@@ -29,9 +29,8 @@ type Agent = {
 }
 
 type Traits = {
-    regions?: string[],
-    backgrounds?: string[],
     languages?: string[],
+    backgrounds?: string[],
     martialArts?: string[],
     fieldRoles?: string[]
 }

@@ -3,7 +3,7 @@
 /* now we woul like to actually asign these traits and preserve the new agent instance 
 in the local storage */
 import React, { useState, useEffect } from 'react';
-import traits from "../../../data/agentTraits.json"
+import traits from "../../../data/imaginariaAgentTraits.json"
 import { capitalize } from '../../../lib/format';
 
 // ----------------------------
@@ -21,9 +21,8 @@ type Agent = {
 }
 
 type Traits = {
-    regions?: string[],
-    backgrounds?: string[],
     languages?: string[],
+    backgrounds?: string[],
     martialArts?: string[],
     fieldRoles?: string[]
 }
@@ -41,9 +40,8 @@ function createDefaultAgent(): Agent {
         mode: "training",
         icon: "🕵️‍♂️",
         traits: {
-            regions: [""],
-            backgrounds: [""],
             languages: [""],
+            backgrounds: [""],
             martialArts: [""],
             fieldRoles: [""]
         }

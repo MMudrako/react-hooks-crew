@@ -8,7 +8,7 @@ import TheArchivist from './hookDemos/level1/TheArchivist';
 import TheArchitect from './hookDemos/level2/TheArchitect';
 import ArchitectProvider from './context/ArchitectContext';
 import TheMissionArchitect from './hookDemos/level1/TheMissionArchitect';
-import TheSorter from './drafts/TheSorter-Archive';
+//import TheSorter from './drafts/TheSorter-Archive';
 import { Hook } from "@/types"
 import LegendBuilder from './hookDemos/AgentBuilder'; //draft component for refactoring other demo components
 
@@ -27,7 +27,7 @@ const level1DemoMap = {
     "useMemo": TheMemoizer,
     "useCallback": TheMentor,
     "useTransition": TheDispatcher,
-    "useReducer": TheSorter
+    //"useReducer": TheSorter
 
 }
 

@@ -3,9 +3,15 @@
 /* in this demo I will illustrate how useTransition can improve app 
 perfromance when thrid party or DB needs to be fetched */
 import React, { useState, useEffect, useRef, useMemo } from 'react';
-import traits from "../../../data/agentTraits.json"
+import traits from "../../../data/imaginariaAgentTraits.json"
 import { capitalize } from '../../../lib/format';
 import { LegendBuilderTransition } from '../AgentBuilder';
+
+//add region search utility function to select regions by language trait
+/* ${regions && regions.length > 0
+               ? `This agent had missions in the ${regions.join(", ")}.`
+               : `This agent has yet to explore their first region.`}  */
+
 
 
 // ----------------------------
@@ -23,9 +29,8 @@ type Agent = {
 }
 
 type Traits = {
-    regions?: string[],
-    backgrounds?: string[],
     languages?: string[],
+    backgrounds?: string[],
     martialArts?: string[],
     fieldRoles?: string[]
 }
@@ -43,9 +48,8 @@ function createDefaultAgent(): Agent {
         mode: "training",
         icon: "🕵️‍♂️",
         traits: {
-            regions: [],
-            backgrounds: [],
             languages: [],
+            backgrounds: [],
             martialArts: [],
             fieldRoles: []
         }
@@ -80,7 +84,7 @@ export default function TheDispatcher() {
     const prompt = useMemo(() => {
 
         console.log("Building prompt...");
-        const { regions, backgrounds, languages, martialArts, fieldRoles } = agent.traits ?? {};
+        const { languages, backgrounds, martialArts, fieldRoles } = agent.traits ?? {};
 
         return `
                 Write a heroic legend about an agent:
@@ -90,10 +94,6 @@ export default function TheDispatcher() {
                 Status: ${agent.status}
                 Assigned By: ${agent.assignedBy}
                 Mode: ${agent.mode}
-
-                ${regions && regions.length > 0
-                ? `This agent had missions in the ${regions.join(", ")}.`
-                : `This agent has yet to explore their first region.`}
 
                 ${fieldRoles && fieldRoles.length > 0
                 ? `They often served in roles such as ${fieldRoles.join(", ")}.`

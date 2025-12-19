@@ -4,7 +4,7 @@
 aka in my app as theArchivist - it stores a value that is not needed for rerendering or helps with control flow that 
 contain internal logic not intended for rendering */
 import React, { useState, useEffect, useRef } from 'react';
-import traits from "../../../data/agentTraits.json"
+import traits from "../../../data/imaginariaAgentTraits.json"
 import { capitalize } from '../../../lib/format';
 
 
@@ -23,9 +23,8 @@ type Agent = {
 }
 
 type Traits = {
-    regions?: string[],
-    backgrounds?: string[],
     languages?: string[],
+    backgrounds?: string[],
     martialArts?: string[],
     fieldRoles?: string[]
 }
@@ -43,9 +42,8 @@ function createDefaultAgent(): Agent {
         mode: "training",
         icon: "🕵️‍♂️",
         traits: {
-            regions: [],
-            backgrounds: [],
             languages: [],
+            backgrounds: [],
             martialArts: [],
             fieldRoles: []
         }
