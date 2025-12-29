@@ -1,24 +1,12 @@
 "use client";
 import allAgents from "../../../data/fieldAgents.json"
 import React, { useState, memo, useCallback } from 'react'
-
-// ----------------------------
-// Type definitions
-// ----------------------------
-type Agent = {
-    id: number,
-    name: string,
-    specialty: string,
-    status: string
-    assignedBy: string,
-    mode: string,
-    icon: string,
-}
+import { Agent } from '@/types'
 
 // ----------------------------
 // Type-assert JSON data
 // ----------------------------
-const typedAgents: Agent[] = allAgents;
+const typedAgents: Agent[] = allAgents as Agent[];
 
 // ----------------------------
 // Child Component: TrainingSession

@@ -10,24 +10,23 @@ export type Hook = {
   featured: boolean;
   level: number
 };
-export type Traits = {
-  regions?: string[];
-  backgrounds?: string[];
+export interface Traits {
   languages?: string[];
+  backgrounds?: string[];
   martialArts?: string[];
   fieldRoles?: string[];
 };
 
 export type Agent = {
-  id: number;
-  name: string;
-  specialty: string;
-  status: string;
-  assignedBy: string;
-  mode: string;
-  icon: string;
-  traits?: Traits;
-};
+  id: number,
+  name: string,
+  specialty: string,
+  status: "Untrained" | "Trained" | "Active" | "Retired" | "InTraining", // Union literal type restricts values
+  assignedBy: string,
+  mode: string,
+  icon: string,
+  traits?: Traits // Optional property
+}
 
 type SorterAgent = {
   id: number,

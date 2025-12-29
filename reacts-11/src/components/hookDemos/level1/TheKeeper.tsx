@@ -13,44 +13,10 @@ which will be displayed at the bottom of ui */
 import React, { useState } from 'react';
 import traits from "../../../data/imaginariaAgentTraits.json"
 import { capitalize } from '../../../lib/format';
+import { Traits } from '@/types'
+import { createDefaultAgent } from '../../../lib/utils';
 
-// --------------------
-// Type Definitions
-// --------------------
-type Agent = {
-    id: number,
-    name: string,
-    specialty: string,
-    status: "Untrained" | "Trained" | "Active" | "Retired", // Union literal type restricts values
-    assignedBy: string,
-    mode: string,
-    icon: string,
-    traits?: Traits // Optional property
-}
-
-type Traits = {
-    languages?: string[],
-    backgrounds?: string[],
-    martialArts?: string[],
-    fieldRoles?: string[]
-}
-
-// --------------------
-// Utility to create a fresh default agent
-// --------------------
-function createDefaultAgent(): Agent {
-    return {
-        "id": 1,
-        "name": "Linus Blaze",
-        "specialty": "Recon",
-        "status": "Untrained",
-        "assignedBy": "The Sorter",
-        "mode": "training",
-        "icon": "🕵️‍♂️"
-        // traits is optional, so we don't include it by default
-    }
-}
-
+// create a default agent with empty traits
 const defaultAgent = createDefaultAgent();
 
 // The traits data comes from a JSON file in the data directory
@@ -113,17 +79,16 @@ export default function TheKeeper() {
         <>
             {/* Display agent's base info */}
             <div>
-                {Object.entries(defaultAgent).map(([key, value]) => (
-                    <div key={key} >
-                        <p className="inline font-oxanium">
-                            {capitalize(key)}{': '}
-                        </p>
-                        <p className="inline font-oxanium">
-                            {capitalize(value)}
-                        </p>
-                    </div>
+                {Object.entries(defaultAgent).map(([key, value], index, arr) => (
+                    (index < arr.length - 1) && (
+                        <div key={key}>
+                            <p className="inline font-oxanium">{capitalize(key)}: </p>
+                            <p className="inline font-oxanium">{capitalize(String(value))}</p>
+                        </div>
+                    )
                 ))}
             </div>
+
 
             {/* Trait selection form */}
             <form onSubmit={addTraits}>

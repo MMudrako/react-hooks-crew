@@ -5,50 +5,13 @@ in the local storage */
 import React, { useState, useEffect } from 'react';
 import traits from "../../../data/imaginariaAgentTraits.json"
 import { capitalize } from '../../../lib/format';
+import { Agent, Traits } from '@/types'
+import { createDefaultAgent } from '../../../lib/utils';
 
-// ----------------------------
-// Type definitions
-// ----------------------------
-type Agent = {
-    id: number,
-    name: string,
-    specialty: string,
-    status: "Untrained" | "Trained" | "Active" | "Retired",
-    assignedBy: string,
-    mode: string,
-    icon: string,
-    traits?: Traits
-}
-
-type Traits = {
-    languages?: string[],
-    backgrounds?: string[],
-    martialArts?: string[],
-    fieldRoles?: string[]
-}
-
-// ----------------------------
-// Helper to create a default agent with empty traits
-// ----------------------------
-function createDefaultAgent(): Agent {
-    return {
-        id: 1,
-        name: "Linus Blaze",
-        specialty: "Recon",
-        status: "Untrained",
-        assignedBy: "The Sorter",
-        mode: "training",
-        icon: "🕵️‍♂️",
-        traits: {
-            languages: [""],
-            backgrounds: [""],
-            martialArts: [""],
-            fieldRoles: [""]
-        }
-    }
-}
-
+// create a default agent with empty traits
 const defaultAgent = createDefaultAgent();
+
+// The traits data comes from a JSON file in the data directory
 const agentTraits: Traits = traits;
 
 // LocalStorage key MUST be a string

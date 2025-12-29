@@ -6,6 +6,8 @@ import React, { useState, useEffect, useRef, useMemo } from 'react';
 import traits from "../../../data/imaginariaAgentTraits.json"
 import { capitalize } from '../../../lib/format';
 import { LegendBuilderTransition } from '../AgentBuilder';
+import { Agent, Traits } from '@/types'
+import { createDefaultAgent } from '../../../lib/utils';
 
 //add region search utility function to select regions by language trait
 /* ${regions && regions.length > 0
@@ -14,49 +16,10 @@ import { LegendBuilderTransition } from '../AgentBuilder';
 
 
 
-// ----------------------------
-// Type definitions
-// ----------------------------
-type Agent = {
-    id: number,
-    name: string,
-    specialty: string,
-    status: "Untrained" | "Trained" | "Active" | "Retired",
-    assignedBy: string,
-    mode: string,
-    icon: string,
-    traits?: Traits
-}
-
-type Traits = {
-    languages?: string[],
-    backgrounds?: string[],
-    martialArts?: string[],
-    fieldRoles?: string[]
-}
-
-// ----------------------------
-// Helper to create a default agent with empty traits
-// ----------------------------
-function createDefaultAgent(): Agent {
-    return {
-        id: 1,
-        name: "Linus Blaze",
-        specialty: "Recon",
-        status: "Untrained",
-        assignedBy: "The Sorter",
-        mode: "training",
-        icon: "🕵️‍♂️",
-        traits: {
-            languages: [],
-            backgrounds: [],
-            martialArts: [],
-            fieldRoles: []
-        }
-    }
-}
-
+// create a default agent with empty traits
 const defaultAgent = createDefaultAgent();
+
+// The traits data comes from a JSON file in the data directory
 const agentTraits: Traits = traits;
 
 // LocalStorage key MUST be a string
