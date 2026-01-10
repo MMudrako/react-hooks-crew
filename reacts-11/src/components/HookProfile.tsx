@@ -16,6 +16,7 @@ import TheMemoizer from './hookDemos/level1/TheMemoizer';
 import TheMentor from './hookDemos/level1/TheMentor';
 import TheDispatcher from './hookDemos/level1/TheDispatcher';
 import TheStylist from './hookDemos/level2/TheStylist'
+import TheHandler from './hookDemos/level1/TheHandler';
 
 type HookId1 = 'useState' | 'useEffect' | 'useRef' | 'useContext-basic' | 'useMemo' | 'useCallback' | "useTransition" | "useReducer";
 type HookId2 = 'useContext-advanced' | 'useLayoutEffect'
@@ -27,14 +28,14 @@ const level1DemoMap = {
     "useMemo": TheMemoizer,
     "useCallback": TheMentor,
     "useTransition": TheDispatcher,
-    //"useReducer": TheSorter
+    "useReducer": TheHandler
 
 }
 
 const level2DemoMap = {
     "useContext-advanced": TheArchitect,
-    "useLayoutEffect": TheStylist
-
+    "useLayoutEffect": TheStylist,
+    //"useReducer-advanced": TheSorter
 
 }
 export default function HookProfile({ hook }: { hook: Hook }) {

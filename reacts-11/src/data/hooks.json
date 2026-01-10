@@ -106,9 +106,23 @@
     },
     {
         "id": "useReducer",
-        "name": "The Sorter",
+        "name": "The Handler",
         "hook": "useReducer",
         "role": "Handles complex onboarding logic with discipline and order.",
+        "traits": [
+            "Uses reducer pattern",
+            "Predictable state transitions"
+        ],
+        "usedFor": "Handling forms, state machines, or structured updates.",
+        "icon": "🧮",
+        "featured": true,
+        "level": 1
+    },
+    {
+        "id": "useReducer-advanced",
+        "name": "The Sorter",
+        "hook": "useReducer",
+        "role": "Handles multi-stage mission assignment with a comprehansive assessment system.",
         "traits": [
             "Manages complex state with actions",
             "Uses reducer pattern",

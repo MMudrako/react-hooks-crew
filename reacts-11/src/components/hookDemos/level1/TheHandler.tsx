@@ -2,80 +2,158 @@
 
 /* now we woul like to actually asign these traits and preserve the new agent instance 
 in the local storage */
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useReducer } from 'react';
 import traits from "../../../data/imaginariaAgentTraits.json"
 import { capitalize } from '../../../lib/format';
 import { Agent, Traits } from '@/types'
 import { createDefaultAgent } from '../../../lib/utils';
 import { TraitSelectionForm } from '@/ui/TraitSelectionForm';
 
+type State = {
+    draftSelection: Record<string, string[]>,
+    committedSelection: Traits,
+
+}
+
 // create a default agent with empty traits
 const defaultAgent = createDefaultAgent();
 
+const initialState: State = {
+    draftSelection: {}, // instead of selecteTraits state to store the user's selection from inputs before committing to the final list 
+    committedSelection: {
+        languages: [],
+        backgrounds: [],
+        martialArts: [],
+        fieldRoles: []
+    },// instead of traitsList state to store final selection of traits
+
+}
+
+type Action =
+    | { type: 'TOGGLE_CHECKBOX'; payload: { category: string, value: string, checked: boolean } }
+    | { type: 'SELECT_RADIO'; payload: { category: string, value: string } }
+    | { type: 'ADD_TRAITS'; }
+    | { type: 'CLEAR_TRAITS'; }
+
+function traitsReducer(state: State, action: Action) {
+    switch (action.type) {
+        case 'TOGGLE_CHECKBOX': {
+            const { category, value, checked } = action.payload;
+            const current = state.draftSelection[category] ?? []
+            return {
+                ...state,
+                draftSelection: {
+                    ...state.draftSelection,
+                    [category]: checked
+                        ? [...current, value] // Add if checked
+                        : current.filter((v) => v !== value) // Remove if unchecked
+                },
+
+
+            }
+        }
+        case 'SELECT_RADIO': {
+            const { category, value } = action.payload;
+            return {
+                ...state,
+                draftSelection: {
+                    ...state.draftSelection,
+                    [category]: [value]
+                }, // Add if checked
+
+
+            }
+        }
+        case 'ADD_TRAITS': {
+            return {
+                ...state,
+                committedSelection: {
+                    languages: state.draftSelection.languages,
+                    backgrounds: state.draftSelection.backgrounds,
+                    martialArts: state.draftSelection.martialArts,
+                    fieldRoles: state.draftSelection.fieldRoles,
+
+                },
+
+            }
+        }
+        case 'CLEAR_TRAITS': {
+            return {
+                ...state,
+                draftSelection: {},
+                committedSelection: {},
+
+            };
+        }
+
+        default:
+            return state;
+    }
+}
 // The traits data comes from a JSON file in the data directory
 const agentTraits: Traits = traits;
 
 // LocalStorage key MUST be a string
 const AGENT_KEY = 'agent';
 
-export default function TheTracker() {
-    // Stores the trait selections from form inputs before committing to agent
-    const [selectedTraits, setSelectedTraits] = useState<Record<string, string[]>>({});
-
-
-    //Stores user's final selection of the custom traits list
-    const [traitsList, setTraitsList] = useState<Traits>({});
+export default function TheHandler() {
 
     // Stores the actual agent object, including traits
     const [agent, setAgent] = useState<Agent>(defaultAgent);
+
+    const [state, dispatch] = useReducer(traitsReducer, initialState);
 
     // ----------------------------
     // Event handlers for form changes
     // ----------------------------
     const handleCheckboxChange = (category: string, value: string, checked: boolean) => {
-        setSelectedTraits(prevTraits => ({
-            ...prevTraits,
-            [category]: checked
-                ? [...(prevTraits[category] || []), value] // Add if checked
-                : (prevTraits[category] || []).filter(v => v !== value) // Remove if unchecked
-        }));
+        dispatch({
+            type: 'TOGGLE_CHECKBOX',
+            payload: { category, value, checked }
+        })
+
     };
 
-    const handleRadioChange = (category: string, selectedValue: string) => {
-        setSelectedTraits(prevTraits => ({
-            ...prevTraits,
-            [category]: [selectedValue] // Only one value for radio buttons
-        }));
+    const handleRadioChange = (category: string, value: string) => {
+        dispatch({
+            type: "SELECT_RADIO",
+            payload: { category, value }
+        });
     };
 
-    const addTraits = (selectedTraits: Record<string, string[]>) => {
-
+    const addTraits = () => {
         // Commit selected traits after form submission
-        setTraitsList(selectedTraits);
+        dispatch({
+            type: "ADD_TRAITS",
+
+        });
     };
 
     const clearList = () => {
         // Reset selections 
-        setSelectedTraits({});
-        setTraitsList({});
+        dispatch({
+            type: "CLEAR_TRAITS"
+        })
+
 
     }
 
     const saveAgent = () => {
+
         // Update agent with current selectedTraits
         setAgent(prevAgent => ({
             ...prevAgent,
-            traits: selectedTraits
+            traits: state.committedSelection
         }));
     }
 
     const clearAgentTraits = () => {
-        setTraitsList({});
         setAgent(prevAgent => ({
             ...prevAgent,
             traits: {} // Clear traits entirely
         }));
     };
+
 
     // ----------------------------
     // useEffect #1: Load from localStorage
@@ -118,7 +196,7 @@ export default function TheTracker() {
             {/* Trait selection form */}
             <TraitSelectionForm
                 agentTraits={agentTraits}
-                selectedTraits={selectedTraits}
+                selectedTraits={state.draftSelection}
                 onRadioChange={handleRadioChange}
                 onCheckboxChange={handleCheckboxChange}
                 onSubmit={addTraits}
@@ -127,7 +205,7 @@ export default function TheTracker() {
 
             {/* Display chosen traits */}
             <div>
-                {traitsList && Object.entries(traitsList).map(([cat, values]) => (
+                {state.committedSelection && Object.entries(state.committedSelection).map(([cat, values]) => (
                     <div key={cat}>
                         <h3 className="inline font-oxanium">{capitalize(cat)}: </h3>
                         <ul className="inline font-oxanium">
