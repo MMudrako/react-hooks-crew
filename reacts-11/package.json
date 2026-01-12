@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "next": "15.4.5",
+    "next": "15.4.10",
     "node-fetch": "^2.7.0",
     "openai": "^5.12.2",
     "react": "19.1.0",
