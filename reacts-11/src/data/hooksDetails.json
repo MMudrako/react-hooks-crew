@@ -35,7 +35,7 @@
                 "description": "An object with a `.current` property that can be mutated without triggering re-renders."
             }
         ],
-        "missionBriefing": "'The Archivist' demonstrates how useRef stores mutable values between renders without causing re-renders. It remembers past fruit combinations, enabling users to 'replay' previous orders. This mission shows useRef as a static vault for non-visual memory—ideal for preserving state across interactions without affecting the UI."
+        "missionBriefing": "The Archivist demonstrates how useRef stores mutable values that persist across renders without triggering re-renders. In this mission, refs are used to access a live DOM node for animation and to track timer IDs that coordinate UI side effects. This shows useRef as an imperative control tool—ideal for animations, timers, and cleanup logic that React does not need to render."
     },
     {
         "id": "useEffect",

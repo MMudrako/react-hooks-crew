@@ -132,6 +132,7 @@ export default function HookProfile({ hook }: { hook: Hook }) {
 
                         </h3>
                         < p className="mt-2 text-base text-foreground" > {profile?.missionBriefing} </p>
+                        {/*lesson text pannel here*/}
 
                     </div>
                     < div className='output border border-foreground  ' >
