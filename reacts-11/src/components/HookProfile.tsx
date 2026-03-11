@@ -8,6 +8,7 @@ import TheArchivist from './hookDemos/level1/TheArchivist';
 import TheArchitect from './hookDemos/level2/TheArchitect';
 import ArchitectProvider from './context/ArchitectContext';
 import TheMissionArchitect from './hookDemos/level1/TheMissionArchitect';
+import TheNavigator from './hookDemos/level1/TheNavigator';
 //import TheSorter from './drafts/TheSorter-Archive';
 import { Hook } from "@/types"
 import LegendBuilder from './hookDemos/AgentBuilder'; //draft component for refactoring other demo components
@@ -17,8 +18,9 @@ import TheMentor from './hookDemos/level1/TheMentor';
 import TheDispatcher from './hookDemos/level1/TheDispatcher';
 import TheStylist from './hookDemos/level2/TheStylist'
 import TheHandler from './hookDemos/level1/TheHandler';
+import { useImperativeHandle } from 'react';
 
-type HookId1 = 'useState' | 'useEffect' | 'useRef' | 'useContext-basic' | 'useMemo' | 'useCallback' | "useTransition" | "useReducer";
+type HookId1 = 'useState' | 'useEffect' | 'useRef' | 'useContext-basic' | 'useMemo' | 'useCallback' | "useTransition" | "useReducer" | "useImperativeHandle-basic";
 type HookId2 = 'useContext-advanced' | 'useLayoutEffect'
 const level1DemoMap = {
     "useState": TheKeeper,
@@ -28,7 +30,8 @@ const level1DemoMap = {
     "useMemo": TheMemoizer,
     "useCallback": TheMentor,
     "useTransition": TheDispatcher,
-    "useReducer": TheHandler
+    "useReducer": TheHandler,
+    "useImperativeHandle-basic": TheNavigator
 
 }
 

@@ -149,17 +149,32 @@
         "level": 2
     },
     {
-        "id": "useImperativeHandle",
-        "name": "The Croupier",
+        "id": "useImperativeHandle-basic",
+        "name": "TheNavigator",
         "hook": "useImperativeHandle",
-        "role": "I do not just deal the cards — I decide which ones you think you got.",
+        "role": "I send precise commands to devices you use on the field.",
         "traits": [
             "Customizes ref exposure",
             "Works with forwardRef",
             "Hides internal logic"
         ],
         "usedFor": "Exposing specific methods to parent components via refs.",
-        "icon": "♣️",
+        "icon": "🕹️",
+        "featured": false,
+        "level": 1
+    },
+    {
+        "id": "useImperativeHandle-advanced",
+        "name": "SeniorNavigator",
+        "hook": "useImperativeHandle",
+        "role": "I coordinate the mission without stepping into the field.",
+        "traits": [
+            "Curated API surface design",
+            "Incapsulation in complex systems",
+            "Safeguarding expensive operations"
+        ],
+        "usedFor": "Exposing specific methods to parent components via refs.",
+        "icon": "🎮",
         "featured": false,
         "level": 2
     },
