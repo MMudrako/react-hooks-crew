@@ -1,6 +1,10 @@
 import type { NextConfig } from "next";
 
+
+
 const nextConfig: NextConfig = {
+
+  turbopack: {},
   /* config options here */
   webpack(config) {
     config.module.rules.push({
@@ -10,7 +14,9 @@ const nextConfig: NextConfig = {
         {
           loader: '@svgr/webpack',
           options: {
-            ref: true //enable forwardRef in client components
+            ref: true, //enable forwardRef in client components
+            svgo: true,
+            titleProp: true,
           },
         }],
     });
