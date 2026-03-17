@@ -287,15 +287,21 @@ export default function TheHandler() {
             {/* Display custom agent instance */}
             < div className="grid grid-cols-[1fr_auto] gap-2" >
                 <div className='plot pt-25 pl-3' >
-                    <p>{`Your new hire by the name of ${agent.name} was asigned the following traits:`}</p>
-                    {agent.traits && Object.entries(agent.traits).map(([cat, values]) => (
-                        <div key={cat}>
-                            <h3 className="inline font-oxanium">{capitalize(cat)}: </h3>
-                            <ul className="inline font-oxanium">
-                                {values.map(v => <li key={v}>{capitalize(v)}</li>)}
-                            </ul>
-                        </div>
-                    ))}
+                    {!Object.entries(agent.traits).some(([cat, values]) => values.length > 0)
+                        &&
+                        <>
+                            <p>{`Your new hire by the name of ${agent.name} was asigned the following traits:`}</p>
+                            {Object.entries(agent.traits).map(([cat, values]) => (
+                                <div key={cat}>
+                                    <h3 className="inline font-oxanium">{capitalize(cat)}: </h3>
+                                    <ul className="inline font-oxanium">
+                                        {values.map(v => <li key={v}>{capitalize(v)}</li>)}
+                                    </ul>
+                                </div>
+
+                            ))}
+                        </>
+                    }
                 </div>
                 <div ref={frameRef} className="relative w-72 h-72 rounded-xl overflow-hidden">
                     <IntakeFrame className="absolute top-0 left-0 w-full h-full z-10 pointer-events-none" />
