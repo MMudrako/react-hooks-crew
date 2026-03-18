@@ -1,6 +1,6 @@
 import React from "react";
 import { Traits } from "@/types";
-import { TraitCheckboxGroup } from "./CheckboxGroup";
+import { TraitScrolSelectGroup } from "./ScrolSelectGroup";
 import { TraitRadioGroup } from "./RadioGroup";
 import { capitalize } from "@/lib/format";
 
@@ -9,7 +9,7 @@ type TraitSelectionFormProps = {
     agentTraits: Traits,
     selectedTraits: Record<string, string[]>,
     onRadioChange: (category: string, selectedValue: string) => void,
-    onCheckboxChange: (category: string, value: string, checked: boolean) => void,
+    onScrolSelectChange: (category: string, value: string, checked: boolean) => void,
     onSubmit: (selectedTraits: Record<string, string[]>) => void
 }
 
@@ -17,23 +17,25 @@ export function TraitSelectionForm({
     agentTraits,
     selectedTraits,
     onRadioChange,
-    onCheckboxChange,
+    onScrolSelectChange,
     onSubmit
 }: TraitSelectionFormProps) {
+
+
     return (
         <form onSubmit={(e) => {
             e.preventDefault();
             onSubmit(selectedTraits)
         }}>
             <fieldset>
-                <legend>Choose traits for your custom agent</legend>
+                <legend>Choose traits for your new agent in training</legend>
 
-                {Object.entries(agentTraits).map(([category, values], index, arr) => (
+                {[...Object.entries(agentTraits)].reverse().map(([category, values], index, arr) => (
                     <label htmlFor={category} key={category}
-                        className='min-h-[20px] text-2xl inline-block'>
+                        className='min-h-[20px] text-sm inline-block gap-2'>
                         {capitalize(category)}
 
-                        {index === arr.length - 1
+                        {index === 0
                             ? (
                                 <TraitRadioGroup
                                     key={category}
@@ -47,13 +49,13 @@ export function TraitSelectionForm({
                                 />
                             )
                             : (
-                                <TraitCheckboxGroup
+                                <TraitScrolSelectGroup
 
                                     key={category}
                                     category={category}
                                     values={values}
                                     selectedValues={selectedTraits[category] ?? []}
-                                    onChange={onCheckboxChange}
+                                    onChange={onScrolSelectChange}
                                 />
                             )
                         }

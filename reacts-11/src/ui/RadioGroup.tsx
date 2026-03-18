@@ -18,11 +18,11 @@ export function TraitRadioGroup({
         <fieldset className="mb-4">
 
 
-            <ul className="mt-2 space-y-1">
+            <ul className="mt-2 space-y-2">
                 {values.map((value) => {
                     const checked = value === selectedValue
                     return (
-                        <li key={value} className="flex items-center gap-2 text-sm">
+                        <li key={value} className=" inline-block items-center gap-2 px-2 text-sm">
                             <input
                                 type="radio"
                                 name={category}

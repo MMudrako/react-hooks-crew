@@ -132,7 +132,7 @@ export function HookGeneratedIdEmailField() {
                 IDENTITY LOG:
             </h4>
             <ul>
-                {Ids.map((id) => <li key={id}> {id}</li>)}
+                {Ids.map((id, i) => <li key={i}> {id}</li>)}
 
             </ul>
             {!isEmpty && (<h4 className="font-oxanium text-lg mb-3 text-emerald-400">

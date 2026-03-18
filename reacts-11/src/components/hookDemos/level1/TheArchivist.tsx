@@ -23,7 +23,9 @@ import { capitalize } from '../../../lib/format';
 import { Agent, Traits } from '@/types'
 import { createDefaultAgent } from '../../../lib/utils';
 import { TraitSelectionForm } from '@/ui/TraitSelectionForm';
+import { traitsReducer } from './TheHandler';
 import IntakeFrame from '@/components/frames/intakeFrame.svg'
+
 
 type State = {
     draftSelection: Record<string, string[]>,
@@ -45,67 +47,7 @@ const initialState: State = {
 
 }
 
-type Action =
-    | { type: 'TOGGLE_CHECKBOX'; payload: { category: string, value: string, checked: boolean } }
-    | { type: 'SELECT_RADIO'; payload: { category: string, value: string } }
-    | { type: 'ADD_TRAITS'; }
-    | { type: 'CLEAR_TRAITS'; }
 
-function traitsReducer(state: State, action: Action) {
-    switch (action.type) {
-        case 'TOGGLE_CHECKBOX': {
-            const { category, value, checked } = action.payload;
-            const current = state.draftSelection[category] ?? []
-            return {
-                ...state,
-                draftSelection: {
-                    ...state.draftSelection,
-                    [category]: checked
-                        ? [...current, value] // Add if checked
-                        : current.filter((v) => v !== value) // Remove if unchecked
-                },
-
-
-            }
-        }
-        case 'SELECT_RADIO': {
-            const { category, value } = action.payload;
-            return {
-                ...state,
-                draftSelection: {
-                    ...state.draftSelection,
-                    [category]: [value]
-                }, // Add if checked
-
-
-            }
-        }
-        case 'ADD_TRAITS': {
-            return {
-                ...state,
-                committedSelection: {
-                    languages: state.draftSelection.languages,
-                    backgrounds: state.draftSelection.backgrounds,
-                    martialArts: state.draftSelection.martialArts,
-                    fieldRoles: state.draftSelection.fieldRoles,
-
-                },
-
-            }
-        }
-        case 'CLEAR_TRAITS': {
-            return {
-                ...state,
-                draftSelection: {},
-                committedSelection: {},
-
-            };
-        }
-
-        default:
-            return state;
-    }
-}
 // The traits data comes from a JSON file in the data directory
 const agentTraits: Traits = traits;
 
@@ -123,13 +65,15 @@ export default function TheHandler() {
 
     const resetTimerRef = useRef<number | null>(null);
 
+    const [pendingDescription, setPendingDescription] = useState<string>("")
+    const [description, setDescription] = useState<string>("")
 
     // ----------------------------
     // Event handlers for form changes
     // ----------------------------
-    const handleCheckboxChange = (category: string, value: string, checked: boolean) => {
+    const handleScrolSelectChange = (category: string, value: string, checked: boolean) => {
         dispatch({
-            type: 'TOGGLE_CHECKBOX',
+            type: 'TOGGLE_SCROL_SELECT',
             payload: { category, value, checked }
         })
 
@@ -171,7 +115,12 @@ export default function TheHandler() {
     const clearAgentTraits = () => {
         setAgent(prevAgent => ({
             ...prevAgent,
-            traits: {} // Clear traits entirely
+            traits: {
+                languages: [""],
+                backgrounds: [""],
+                martialArts: [""],
+                fieldRoles: [""]
+            },// instead of traitsList state to store final selection of traits Clear traits 
         }));
     };
 
@@ -193,8 +142,10 @@ export default function TheHandler() {
     // Runs on initial mount AND on every `agent` state update
     // ----------------------------
     useEffect(() => {
-        console.log('Saving agent to localStorage:', agent);
-        localStorage.setItem(AGENT_KEY, JSON.stringify(agent));
+        if (agent.traits !== defaultAgent.traits) {
+            console.log('Saving agent to localStorage:', agent);
+            localStorage.setItem(AGENT_KEY, JSON.stringify(agent));
+        }
 
         //ref animation
         const frame = frameRef.current;
@@ -221,6 +172,71 @@ export default function TheHandler() {
         return () => clearTimeout(resetTimerRef.current!);
     }, [agent]); // Dependency = agent
 
+    useEffect(() => {
+
+        console.log("Building pending description...");
+
+        const { languages, backgrounds, martialArts, fieldRoles } = state.committedSelection;
+
+        const description = `
+            Agent Configuration Console — Pending Installation
+    
+    
+            The following traits are queued for installation into the new operative's profile.
+    
+            ${fieldRoles?.length
+                ? `• Field specialization modules detected: ${fieldRoles?.join(", ")}.`
+                : `• Field specialization module: not yet assigned.`}
+    
+            ${backgrounds?.length
+                ? `• Background data recovered: ${backgrounds.join(", ")} origins.`
+                : `• Background data: incomplete.`}
+    
+            ${languages?.length
+                ? `• Linguistic packages available: ${languages.join(", ")}.`
+                : `• Linguistic capability: none detected.`}
+    
+            ${martialArts?.length
+                ? `• Combat training protocols: ${martialArts.join(", ")}.`
+                : `• Combat training: no martial discipline installed.`}
+            `;
+
+        setPendingDescription(description);
+
+    }, [state]);
+
+    useEffect(() => {
+
+        console.log("Building  new agent traits configuration...");
+
+        const { languages, backgrounds, martialArts, fieldRoles } = agent.traits ?? {};
+
+        const description = `
+            Agent Configuration Console 
+            
+            The installation of the following traits has been completed for ${agent.name} profile.
+    
+            ${fieldRoles?.length
+                ? `• Field specialization modules detected: ${fieldRoles?.join(", ")}.`
+                : `• Field specialization module: not yet assigned.`}
+    
+            ${backgrounds?.length
+                ? `• Background data recovered: ${backgrounds.join(", ")} origins.`
+                : `• Background data: incomplete.`}
+    
+            ${languages?.length
+                ? `• Linguistic packages available: ${languages.join(", ")}.`
+                : `• Linguistic capability: none detected.`}
+    
+            ${martialArts?.length
+                ? `• Combat training protocols: ${martialArts.join(", ")}.`
+                : `• Combat training: no martial discipline installed.`}
+            `;
+
+        setDescription(description);
+
+    }, [agent]);
+
 
     // ----------------------------
     // Render UI
@@ -244,22 +260,21 @@ export default function TheHandler() {
                 agentTraits={agentTraits}
                 selectedTraits={state.draftSelection}
                 onRadioChange={handleRadioChange}
-                onCheckboxChange={handleCheckboxChange}
+                onScrolSelectChange={handleScrolSelectChange}
                 onSubmit={addTraits}
             />
 
 
             {/* Display chosen traits */}
-            <div>
-                {state.committedSelection && Object.entries(state.committedSelection).map(([cat, values]) => (
-                    <div key={cat}>
-                        <h3 className="inline font-oxanium">{capitalize(cat)}: </h3>
-                        <ul className="inline font-oxanium">
-                            {values.map(v => <li key={v}>{capitalize(v)}</li>)}
-                        </ul>
-                    </div>
-                ))}
-            </div>
+
+            {state.committedSelection &&
+
+                <div className="p-0.75 rounded-lg bg-gray-300 font-mono leading-2.5 whitespace-pre-line">
+                    {pendingDescription}
+                </div>
+
+            }
+
 
             {/* Clear button */}
             <button
@@ -286,23 +301,11 @@ export default function TheHandler() {
             </button>
             {/* Display custom agent instance */}
             < div className="grid grid-cols-[1fr_auto] gap-2" >
-                <div className='plot pt-25 pl-3' >
-                    {!Object.entries(agent.traits).some(([cat, values]) => values.length > 0)
-                        &&
-                        <>
-                            <p>{`Your new hire by the name of ${agent.name} was asigned the following traits:`}</p>
-                            {Object.entries(agent.traits).map(([cat, values]) => (
-                                <div key={cat}>
-                                    <h3 className="inline font-oxanium">{capitalize(cat)}: </h3>
-                                    <ul className="inline font-oxanium">
-                                        {values.map(v => <li key={v}>{capitalize(v)}</li>)}
-                                    </ul>
-                                </div>
-
-                            ))}
-                        </>
-                    }
-                </div>
+                {agent.traits !== defaultAgent.traits &&
+                    <div className="p-0.75 rounded-lg bg-gray-300 font-mono h-full leading-4 whitespace-pre-line">
+                        {description}
+                    </div>
+                }
                 <div ref={frameRef} className="relative w-72 h-72 rounded-xl overflow-hidden">
                     <IntakeFrame className="absolute top-0 left-0 w-full h-full z-10 pointer-events-none" />
                     <div className="absolute top-1/7 left-1/4 z-20 ">

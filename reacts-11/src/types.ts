@@ -51,9 +51,8 @@ type SorterTraits = {
 
 };
 
-interface Action {
-  type: "handleCheckBoxChange" | "handleRadioChange" | "addTraits" | "clearList"
-  payload?: {
-    traits?: SorterTraits
-  }
-}
+export type Action =
+  | { type: 'TOGGLE_SCROL_SELECT'; payload: { category: string, value: string, checked: boolean } }
+  | { type: 'SELECT_RADIO'; payload: { category: string, value: string } }
+  | { type: 'ADD_TRAITS'; }
+  | { type: 'CLEAR_TRAITS'; }

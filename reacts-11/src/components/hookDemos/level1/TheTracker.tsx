@@ -120,7 +120,7 @@ export default function TheTracker() {
                 agentTraits={agentTraits}
                 selectedTraits={selectedTraits}
                 onRadioChange={handleRadioChange}
-                onCheckboxChange={handleCheckboxChange}
+                onScrolSelectChange={handleCheckboxChange}
                 onSubmit={addTraits}
             />
 
