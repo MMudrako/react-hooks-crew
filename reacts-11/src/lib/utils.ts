@@ -1,27 +1,81 @@
 
-import { Agent } from '@/types';
+import { Agent, Region } from '@/types';
+import regionsData from '@/data/regionLanguages.json'
+
+
 
 
 // --------------------
-// Utility to create a default agent
+// Utility to create a set of Agents data by region
 // --------------------
-export function createDefaultAgent(): Agent {
-    return {
-        id: 1,
-        name: "Linus Blaze",
-        specialty: "Recon",
-        status: "Untrained",
-        assignedBy: "The Sorter",
-        mode: "training",
-        icon: "🕵️‍♂️",
-        traits: {
-            languages: [],
-            backgrounds: [],
-            martialArts: [],
-            fieldRoles: []
-        }
+
+const regions: Region[] = regionsData;
+
+export function generateAgentsByRegion(regionName: string, count: number): Agent[] {
+
+    const pick = (arr: string[]) => arr[Math.floor(Math.random() * arr.length)];
+
+    const region = regions.find(r => r.regionName === regionName);
+
+    const specialties = ["Recon",
+        "Surveillance",
+        "Communications",
+        "Infiltration",
+        "Extraction",
+        "Negotiation",
+        "Tech Support"
+    ];
+
+    const regionalLanguages = region?.countries.map(c => c.countryLanguage) || [];
+
+    console.log("regionallanguages extracted: ", regionalLanguages);
+
+    function pickLanguages(pool: string[]) {
+        const count = Math.floor(Math.random() * 3) + 2; // 2–4
+
+        const shuffled = [...pool].sort(() => 0.5 - Math.random());
+        return shuffled.slice(0, count);
     }
+
+    console.log("starting generation of agents from ", region?.regionName, "region")
+    return Array.from({ length: count }, (_, i) => {
+
+        if (!region) {
+            throw new Error(`Region "${regionName} not found"`)
+        }
+
+        const first = pick(region.firstNames);
+        const last = `${pick(region.lastStart)}${pick(region.lastEnd)}`
+        const formats = [
+            `${first} ${last}`,
+            `${first} ${last}-${pick(region.lastEnd)}`,
+            `${first} ${last}'${pick(["ar", "en", "is"])}`,]
+
+        return {
+
+            id: String(crypto.randomUUID),
+            name: pick(formats),
+            specialty: pick(specialties),
+            status: "Untrained",
+            assignedBy: "The Sorter",
+            mode: "training",
+            icon: "🕶️",
+            traits: {
+                languages: pickLanguages(regionalLanguages),
+                backgrounds: [],
+                martialArts: [],
+                fieldRoles: []
+            }
+
+        };
+
+    })
+
+
+
 }
+
+
 
 export function generateAgents(count: number): Agent[] {
 
@@ -65,10 +119,9 @@ export function generateAgents(count: number): Agent[] {
     return Array.from({ length: count }, (_, i) => {
         const first = pick(firstNames);
         const last = pick(lastNames);
-
         return {
 
-            id: 10000 + i,
+            id: String(crypto.randomUUID),
             name: `${first} ${last}`,
             specialty: pick(specialties),
             status: "Untrained",
@@ -86,3 +139,23 @@ export function generateAgents(count: number): Agent[] {
     });
 }
 
+// --------------------
+// Utility to create a default agent
+// --------------------
+export function createDefaultAgent(): Agent {
+    return {
+        id: String(crypto.randomUUID),
+        name: "Linus Blaze",
+        specialty: "Recon",
+        status: "Untrained",
+        assignedBy: "The Sorter",
+        mode: "training",
+        icon: "🕵️‍♂️",
+        traits: {
+            languages: [],
+            backgrounds: [],
+            martialArts: [],
+            fieldRoles: []
+        }
+    }
+}

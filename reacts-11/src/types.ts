@@ -18,7 +18,7 @@ export interface Traits {
 };
 
 export type Agent = {
-  id: number,
+  id: string,
   name: string,
   specialty: string,
   status: "Untrained" | "Trained" | "Active" | "Retired" | "InTraining", // Union literal type restricts values
@@ -56,3 +56,22 @@ export type Action =
   | { type: 'SELECT_RADIO'; payload: { category: string, value: string } }
   | { type: 'ADD_TRAITS'; }
   | { type: 'CLEAR_TRAITS'; }
+
+
+export interface Country {
+  countryId: string,
+  countryName: string,
+  countryLanguage: string,
+  countryDescription: string,
+  countryThemeColor: string
+}
+export interface Region {
+  regionName: string,
+  regionTheme: string,
+  regionDescription: string,
+  regionHistoryAndEconomy: string,
+  firstNames: string[],
+  lastStart: string[],
+  lastEnd: string[],
+  countries: Country[]
+}
