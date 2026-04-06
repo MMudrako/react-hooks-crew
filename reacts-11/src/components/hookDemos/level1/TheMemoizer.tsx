@@ -5,7 +5,7 @@ to create a prompt for external API call our next hook hero useMemo comes to the
 import React, { useState, useEffect, useRef, useMemo } from 'react';
 import traits from "../../../data/imaginariaAgentTraits.json"
 import { capitalize } from '../../../lib/format';
-import LegendBuilderMemo from '../AgentBuilder';
+import LegendBuilderMemo from '../LegendBuilder';
 import { Agent, Traits } from '@/types'
 import { createDefaultAgent } from '../../../lib/utils';
 

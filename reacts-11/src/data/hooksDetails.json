@@ -127,25 +127,20 @@
         ]
     },
     {
-        "id": "useLayoutEffect",
-        "legend": "useLayoutEffect is similar to useEffect, but it fires synchronously after all DOM mutations and before the browser paints. It’s used for layout measurements, style mutations, and scenarios where you need to read layout before the screen updates.",
+        "id": "useDeferredValue",
+        "legend": "useDeferredValue lets React delay updating a value used by expensive UI work. It allows the interface to stay responsive while heavy rendering updates catch up in the background.",
         "MO": [
             {
-                "paramName": "effect",
-                "type": "function",
-                "description": "The layout effect function to run after render but before paint."
-            },
-            {
-                "paramName": "deps?",
-                "type": "array",
-                "description": "Optional dependency array to control when the effect runs."
+                "paramName": "value",
+                "type": "any",
+                "description": "The rapidly changing value that should be stabilized before reaching expensive UI updates."
             }
         ],
         "hookPrint": [
             {
-                "name": "void",
-                "type": "undefined",
-                "description": "Same as useEffect — it performs side effects but does not return a usable value."
+                "name": "deferredValue",
+                "type": "any",
+                "description": "A deferred version of the original value that may lag slightly behind the source to keep the UI responsive."
             }
         ]
     },

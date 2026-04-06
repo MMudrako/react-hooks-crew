@@ -10,18 +10,19 @@ import ArchitectProvider from './context/ArchitectContext';
 import TheMissionArchitect from './hookDemos/level1/TheMissionArchitect';
 import TheNavigator from './hookDemos/level1/TheNavigator';
 import TheRegistrar from './hookDemos/level1/TheRegistrar';
+import TheCommunicationsTech from './hookDemos/level1/TheCommunicationsTech';
 //import TheSorter from './drafts/TheSorter-Archive';
 import { Hook } from "@/types"
-import LegendBuilder from './hookDemos/AgentBuilder'; //draft component for refactoring other demo components
+import LegendBuilder from './hookDemos/LegendBuilder'; //draft component for refactoring other demo components
 
 import TheMemoizer from './hookDemos/level1/TheMemoizer';
 import TheMentor from './hookDemos/level1/TheMentor';
 import TheDispatcher from './hookDemos/level1/TheDispatcher';
-import TheStylist from './hookDemos/level2/TheStylist'
+import TheStylist from './drafts/TheStylist'
 import TheHandler from './hookDemos/level1/TheHandler';
-import { useImperativeHandle } from 'react';
 
-type HookId1 = 'useState' | 'useEffect' | 'useRef' | 'useContext-basic' | 'useMemo' | 'useCallback' | "useTransition" | "useReducer" | "useImperativeHandle-basic" | "useId";
+
+type HookId1 = 'useState' | 'useEffect' | 'useRef' | 'useContext-basic' | 'useMemo' | 'useCallback' | "useTransition" | "useReducer" | "useImperativeHandle-basic" | "useId" | "useDeferredValue";
 type HookId2 = 'useContext-advanced' | 'useLayoutEffect'
 const level1DemoMap = {
     "useState": TheKeeper,
@@ -33,7 +34,8 @@ const level1DemoMap = {
     "useTransition": TheDispatcher,
     "useReducer": TheHandler,
     "useImperativeHandle-basic": TheNavigator,
-    "useId": TheRegistrar
+    "useId": TheRegistrar,
+    "useDeferredValue": TheCommunicationsTech
 
 }
 
@@ -130,7 +132,7 @@ export default function HookProfile({ hook }: { hook: Hook }) {
                 <div className=' flex justify-center divider bg-foreground' >
 
                 </div>
-                < div className='grid grid-cols-2 gap-0.5' >
+                < div className='grid grid-cols-[2fr_3fr] gap-0.5' >
                     <div className='mission border border-foreground' >
                         <h3>
                             Mission Briefing

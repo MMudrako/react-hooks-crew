@@ -3,7 +3,7 @@ import React, { useState, useEffect, useMemo } from 'react'
 import { useArchitect } from "../../context/ArchitectContext";
 import { Agent, Traits } from '@/types'
 import { capitalize } from '@/lib/format';
-import { LegendBuilderTransition } from '../AgentBuilder';
+import { LegendBuilderTransition } from '../LegendBuilder';
 import traits from "../../../data/agentTraits.json"
 
 

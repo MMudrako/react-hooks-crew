@@ -134,19 +134,19 @@
         "level": 1
     },
     {
-        "id": "useLayoutEffect",
-        "name": "The Stylist",
-        "hook": "useLayoutEffect",
-        "role": "Executes visual fixes before anyone notices.",
+        "id": "useDeferredValue",
+        "name": "The Communications Technician",
+        "hook": "useDeferredValue",
+        "role": "Stabilizes noisy signals before they reach the command console.",
         "traits": [
-            "Runs synchronously after render",
-            "Blocks paint until complete",
-            "Used for layout reads/writes"
+            "Allows a value to lag behind its source",
+            "Keeps urgent interactions responsive",
+            "Defers non-critical UI updates"
         ],
-        "usedFor": "Measuring layout or applying style fixes before screen paints.",
-        "icon": "💄",
+        "usedFor": "Stabilizing rapidly changing values like search queries or live signals so expensive UI updates do not block user interaction.",
+        "icon": "📡",
         "featured": false,
-        "level": 2
+        "level": 1
     },
     {
         "id": "useImperativeHandle-basic",

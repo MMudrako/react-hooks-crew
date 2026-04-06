@@ -5,7 +5,7 @@ perfromance when thrid party or DB needs to be fetched */
 import React, { useState, useEffect, useRef, useMemo } from 'react';
 import traits from "../../../data/imaginariaAgentTraits.json"
 import { capitalize } from '../../../lib/format';
-import { LegendBuilderTransition } from '../AgentBuilder';
+import { LegendBuilderTransition } from '../LegendBuilder';
 import { Agent, Traits } from '@/types'
 import { createDefaultAgent } from '../../../lib/utils';
 

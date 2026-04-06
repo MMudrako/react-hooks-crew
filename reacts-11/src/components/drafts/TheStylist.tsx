@@ -9,8 +9,8 @@
  BUT after earlier code calculation (change of state) than we need useLayoutEffect*/
 
 import React, { useState, useEffect, useLayoutEffect } from 'react';
-import traits from "../../../data/agentTraits.json"
-import { capitalize } from '../../../lib/format';
+import traits from "../../data/agentTraits.json"
+import { capitalize } from '../../lib/format';
 
 // ----------------------------
 // Type definitions
