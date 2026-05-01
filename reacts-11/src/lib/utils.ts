@@ -53,7 +53,7 @@ export function generateAgentsByRegion(regionName: string, count: number): Agent
 
         return {
 
-            id: String(crypto.randomUUID),
+            id: String(crypto.randomUUID()),
             name: pick(formats),
             specialty: pick(specialties),
             status: "Untrained",

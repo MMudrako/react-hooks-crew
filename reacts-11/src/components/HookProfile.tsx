@@ -92,7 +92,8 @@ export default function HookProfile({ hook }: { hook: Hook }) {
                         }
                     </div>
                     < Image
-                        className="border border-black m-2"
+                        className="border border-black m-2 "
+                        loading="eager"
                         alt="Hook Avatar"
                         src={`/hooksAvatars/${hook.id}.png`}
                         width={200}
