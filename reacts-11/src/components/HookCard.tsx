@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
-//import { Hook } from '../types'
+import { Hook } from '../types'
 
-export default function HookCard({ hook }) {
+export default function HookCard({ hook }: { hook: Hook }) {
 
     return (
 
