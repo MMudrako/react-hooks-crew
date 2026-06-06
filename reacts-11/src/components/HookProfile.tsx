@@ -1,5 +1,18 @@
 
+// HookProfile Component
+//
+// This is the main “runtime renderer” for the React Hooks Eleven project.
+//
+// It takes a single hook profile (data-driven object) and:
+// 1. Displays metadata (name, description, traits, etc.)
+// 2. Renders a visual “demo component” for the hook
+// 3. Applies Level 1 or Level 2 rendering rules depending on hook complexity
+//
+// Level 2 demos may require context providers (e.g. ArchitectProvider)
+// which is why rendering is conditional and wrapped.
+
 import Image from 'next/image';
+
 import { capitalize } from '../lib/format';
 import TheKeeper from './hookDemos/level1/TheKeeper';
 import TheTracker from './hookDemos/level1/TheTracker';
@@ -11,19 +24,23 @@ import TheMissionArchitect from './hookDemos/level1/TheMissionArchitect';
 import TheNavigator from './hookDemos/level1/TheNavigator';
 import TheRegistrar from './hookDemos/level1/TheRegistrar';
 import TheCommunicationsTech from './hookDemos/level1/TheCommunicationsTech';
-//import TheSorter from './drafts/TheSorter-Archive';
-import { Hook } from "@/types"
-import LegendBuilder from './hookDemos/LegendBuilder'; //draft component for refactoring other demo components
-
 import TheMemoizer from './hookDemos/level1/TheMemoizer';
 import TheMentor from './hookDemos/level1/TheMentor';
 import TheDispatcher from './hookDemos/level1/TheDispatcher';
-import TheStylist from './drafts/TheStylist'
 import TheHandler from './hookDemos/level1/TheHandler';
 
+// Resolve which demo component should be rendered for the selected hook
+// Level 1 is used for standard hooks
+// Level 2 is used for advanced hooks that may require additional context
 
+import { Hook } from "@/types"
 type HookId1 = 'useState' | 'useEffect' | 'useRef' | 'useContext-basic' | 'useMemo' | 'useCallback' | "useTransition" | "useReducer" | "useImperativeHandle-basic" | "useId" | "useDeferredValue";
-type HookId2 = 'useContext-advanced' | 'useLayoutEffect'
+type HookId2 = 'useContext-advanced';
+
+// Level 1 demo registry
+// Maps each basic React hook to its corresponding visualization component
+// This allows HookProfile to dynamically render the correct demo per hook ID
+
 const level1DemoMap = {
     "useState": TheKeeper,
     "useEffect": TheTracker,
@@ -39,9 +56,13 @@ const level1DemoMap = {
 
 }
 
+// Level 2 demo registry
+// These demos represent advanced hook usage patterns.
+// Some may require React context providers or additional orchestration layers.
+
 const level2DemoMap = {
-    "useContext-advanced": TheArchitect,
-    "useLayoutEffect": TheStylist,
+    "useContext-advanced": TheArchitect
+
     //"useReducer-advanced": TheSorter
 
 }
@@ -53,6 +74,12 @@ export default function HookProfile({ hook }: { hook: Hook }) {
 
     }
     const profile = hooksDetails.find(entry => entry.id === hook.id);
+
+    // Resolve which demo component should be rendered for the selected hook
+    // Level 1 is used for standard hooks
+    // Level 2 is used for advanced hooks that may require additional context
+
+
     const hookId1 = hook.id as HookId1;
     const hookId2 = hook.id as HookId2;
     const DemoComponentLevel1 = level1DemoMap[hookId1] ?? null;
@@ -146,10 +173,16 @@ export default function HookProfile({ hook }: { hook: Hook }) {
                     < div className='output border border-foreground  ' >
                         <h3>Ops Panel tabs Strategy and Visual Evidence and will be here </h3>
                         {DemoComponentLevel1 && !DemoComponentLevel2 &&
-                            (< DemoComponentLevel1 />
+                            (
+                                // Rendering priority rules:
+                                // 1. If a Level 2 demo exists → it takes priority and is wrapped in its provider
+                                // 2. Otherwise fallback to Level 1 demo
+                                // 3. Only one demo is shown at a time to avoid conflicting visual logic
+                                < DemoComponentLevel1 />
 
                             )}
                         {DemoComponentLevel2 && (
+                            // Level 2 demo: advanced hook visualization requiring Architect context
                             <ArchitectProvider>
                                 <DemoComponentLevel2 />
                             </ArchitectProvider>
