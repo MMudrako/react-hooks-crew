@@ -11,6 +11,7 @@ export type Hook = {
   level: number
 };
 export interface Traits {
+  regions?: string[];
   languages?: string[];
   backgrounds?: string[];
   martialArts?: string[];
@@ -22,6 +23,16 @@ export type Agent = {
   name: string,
   specialty: string,
   status: "Untrained" | "Trained" | "Active" | "Retired" | "InTraining", // Union literal type restricts values
+  assignedBy: string,
+  mode: string,
+  icon: string,
+  traits?: Traits // Optional property
+}
+export type ArchitectAgent = {
+  id: string,
+  name: string,
+  specialty: string,
+  status: string,
   assignedBy: string,
   mode: string,
   icon: string,

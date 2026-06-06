@@ -1,14 +1,14 @@
 "use client";
 import React, { createContext, useCallback, useContext } from "react";
-import { Agent, Traits } from '@/types'
+import { ArchitectAgent } from '@/types'
 // ----------------------------
 // Type definitions
 // ----------------------------
 
 type ArchitectContextType = {
-  defaultAgent: Agent;
-  saveAgent: (key: string, agent: Agent) => void;
-  savePrompt: (key: string, agent: Agent) => string;
+  defaultAgent: ArchitectAgent;
+  saveAgent: (key: string, agent: ArchitectAgent) => void;
+  savePrompt: (key: string, agent: ArchitectAgent) => string;
 
 };
 
@@ -29,8 +29,9 @@ export default function ArchitectProvider({ children }: { children: React.ReactN
 
   // 1. Default agent factory
   const defaultAgent = () => {
+
     return {
-      id: 1,
+      id: String(crypto.randomUUID()),
       name: "Linus Blaze",
       specialty: "Recon",
       status: "Untrained",
@@ -50,13 +51,13 @@ export default function ArchitectProvider({ children }: { children: React.ReactN
   const defaultAgentObj = defaultAgent();
 
   // 2. Save agent to localStorage (skip first render)
-  function saveAgent(key: string, agent: Agent) {
+  function saveAgent(key: string, agent: ArchitectAgent) {
     localStorage.setItem(key, JSON.stringify(agent));
   };
 
 
   // 3. Generate and Save prompt from agent traits
-  const savePrompt = useCallback((key: string, agent: Agent) => {
+  const savePrompt = useCallback((key: string, agent: ArchitectAgent) => {
     console.log("Building prompt...");
     const { regions, backgrounds, languages, martialArts, fieldRoles } = agent.traits ?? {};
 
